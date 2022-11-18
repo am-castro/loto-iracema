@@ -4,13 +4,16 @@
   <div class="topo3"></div>
 </div>
 <mat-toolbar>
-  <div class="toolbar row-auto flex text-center">
+  <div class="toolbar md:mr-60 md:ml-60 row-auto flex text-center">
     <img src="./assets/img/logo-iracema.png">
-    <div class="menu">
-      <button mat-button class="active">Bolões</button>
-      <button mat-button>Resultados</button>
-      <button mat-button>Contato</button>
-      <button mat-button>Dúvidas</button>
+    <div class="menu max-[600px]:hidden block">
+      <button mat-button class="active button">Bolões</button>
+      <button mat-button class="button">Resultados</button>
+      <button mat-button class="button">Contato</button>
+      <button mat-button class="button">Dúvidas</button>
+    </div>
+    <div class="hidden max-[600px]:block">
+      <button mat-icon-button><mat-icon>menu</mat-icon></button>
     </div>
   </div>
 </mat-toolbar>
