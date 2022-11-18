@@ -4,13 +4,37 @@
   <div class="topo3"></div>
 </div>
 <mat-toolbar>
-  <div class="toolbar row-auto flex text-center">
+  <div class="toolbar md:mr-60 md:ml-60 row-auto flex text-center">
     <img src="./assets/img/logo-iracema.png">
-    <div class="menu">
-      <button mat-button class="active">Bolões</button>
-      <button mat-button>Resultados</button>
-      <button mat-button>Contato</button>
-      <button mat-button>Dúvidas</button>
+    <div class="menu max-[600px]:hidden block">
+      <button mat-button class="active button">Bolões</button>
+      <button mat-button class="button">Resultados</button>
+      <button mat-button class="button">Contato</button>
+      <button mat-button class="button">Dúvidas</button>
+    </div>
+    <div class="hidden max-[600px]:block">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarToggleExternalContent2"
+                aria-controls="navbarToggleExternalContent1"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent2">
+        <ul class="bg-light shadow-3 py-2 px-3">
+            <li class="btn btn-link btn-block m-0 p-2 text-start text-dark">home</li>
+            <li class="btn btn-link btn-block m-0 p-2 text-start text-dark">Features</li>
+            <li class="btn btn-link btn-block m-0 p-2 text-start text-dark">Pricing</li>
+        </ul>
+    </div>
     </div>
   </div>
 </mat-toolbar>

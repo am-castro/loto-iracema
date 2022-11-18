@@ -1,10 +1,10 @@
-<div class="pl-52 pr-52 mt-10 w-100 flex flex-wrap">
+<div class="md:pl-52 md:pr-52 mt-10 w-100 flex flex-wrap">
     <div class="w-100 justify-content-center flex">
-      <button mat-raised-button color="primary" class="rounded-full">Bolões</button>
+      <button class="rounded-full bg-[#015DB7] text-white pt-1 pb-1 pl-8 pr-8 text-xl">Bolões</button>
     </div>
 
     <div class="w-100 flex flex-wrap mt-10">
-      <div *ngFor="let card of cards" class="w-1/2 p-10">
+      <div *ngFor="let card of cards" class="max-[600px]:w-100 md:w-1/2 p-10">
         <app-cards [card]="card"></app-cards>
       </div>
     </div>
