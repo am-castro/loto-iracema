@@ -1,0 +1,52 @@
+.linha {
+  display: flex;
+  margin-top: 0;
+}
+.linha .topo1 {
+  width: 33.4%;
+  height: 7px;
+  background: #005dad;
+}
+.linha .topo2 {
+  width: 33.4%;
+  height: 7px;
+  background: #ff9300;
+}
+.linha .topo3 {
+  width: 33.4%;
+  height: 7px;
+  background: #005dad;
+}
+mat-toolbar{
+  background-color: #FFF;
+}
+
+.toolbar{
+  margin: auto 15rem;
+  width: 100%;
+  justify-content: space-between;
+}
+.menu{
+  width: 50%;
+  text-align: right;
+}
+button{
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.active{
+  background-color: #f5f5f5;
+}
+.inative{
+  background-color: #FFF;
+
+}
+.content{
+  background-color: #f5f5f5;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 70%;
+}

@@ -1,0 +1,28 @@
+<div id="bg-login">
+  <div class="login-form">
+      <h1 class="form-title">Wellcome to <span class="text-accent">Overtime</span>, lorem ipsum dolor sit amet at to crroowntdown the last week</h1>
+      <form class="form-content" [formGroup]="loginFormGroup" (ngSubmit)="submit()">
+          <p>
+              <mat-form-field appearance="outline">
+                  <mat-label>Username</mat-label>
+                  <input type="text" matInput placeholder="Username" formControlName="username" #username>
+              </mat-form-field>
+          </p>
+
+          <p>
+              <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input type="password" matInput formControlName="password" #pass>
+              </mat-form-field>
+          </p>
+
+          <p *ngIf="error" class="error">
+              {{ error }}
+          </p>
+
+          <div class="button">
+              <button mat-raised-button color="primary" type="submit">Login</button>
+          </div>
+      </form>
+  </div>
+</div>
