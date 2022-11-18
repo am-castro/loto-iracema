@@ -1,1 +1,11 @@
-<p>boloes works!</p>
+<div class="pl-52 pr-52 mt-10 w-100 flex flex-wrap">
+    <div class="w-100 justify-content-center flex">
+      <button mat-raised-button color="primary" class="rounded-full">Bolões</button>
+    </div>
+
+    <div class="w-100 flex flex-wrap mt-10">
+      <div *ngFor="let card of cards" class="w-1/2 p-10">
+        <app-cards [card]="card"></app-cards>
+      </div>
+    </div>
+</div>

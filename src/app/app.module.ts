@@ -14,6 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CarouselComponent } from './view/components/carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BoloesComponent } from './view/components/boloes/boloes.component';
+import { CardsComponent } from './view/components/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BoloesComponent } from './view/components/boloes/boloes.component';
     LoginComponent,
     HomeComponent,
     CarouselComponent,
-    BoloesComponent
+    BoloesComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
