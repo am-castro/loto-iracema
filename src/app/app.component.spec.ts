@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'loto-iracema'`, () => {
+  it(`should have as title 'iracema'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('loto-iracema');
+    expect(app.title).toEqual('iracema');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('loto-iracema app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('iracema app is running!');
   });
 });
