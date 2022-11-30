@@ -86,21 +86,15 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatTooltipModule,
     MatNativeDateModule,
     MatDividerModule,
-    CdkTableModule,
-    A11yModule,
     BidiModule,
-    CdkAccordionModule,
     ObserversModule,
     OverlayModule,
     PlatformModule,
     PortalModule,
   ],
   exports: [
-    A11yModule,
     ClipboardModule,
     CdkStepperModule,
-    CdkTableModule,
-    CdkTreeModule,
     DragDropModule,
     MatAutocompleteModule,
     MatBadgeModule,
@@ -139,7 +133,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     MatTreeModule,
     OverlayModule,
     PortalModule,
-    ScrollingModule,
   ]
 })
 export class MaterialModule { }

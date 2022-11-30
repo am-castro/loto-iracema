@@ -1,8 +1,19 @@
-<div class="rounded-lg bg-[#F0F0F0] green-1 border-[#229451] border-l-8 border-r-8 pr-10 pl-10 pt-2 pb-2">
-  <div>
-    <div class="flex flex-nowrap items-center"><img src="./assets/img/icon.svg" class="w-10 mr-2"><span class="font-black font-24">BOLÃO DA MEGA SENA</span></div>
+<div class="rounded-30 bg-[#F0F0F0] green-1 border-[#229451] border-l-16 border-r-16 pr-10 pl-10 pt-2 pb-2" fxLayout="row wrap">
+  <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="items-center" fxLayout="row"><img src="./assets/img/icon.svg" class="w-10 mr-2"><span class="font-black font-24">BOLÃO DA MEGA SENA</span></div>
+    <div fxLayout="row" class="items-center"><span class="font-bold mr-2 date">14/10/1999</span><fa-icon [icon]="icons.calendar" style="font-size: 24px;"></fa-icon></div>
   </div>
-  <div>
-
+  <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between end">
+    <div fxFlex="100" fxLayout="row wrap">
+      <div class="describe games mt-4 items-center" fxFlex="100"><fa-icon [icon]="icons.clock" style="width: 30px; height: 30px; font-size: 24px;"></fa-icon> <span class="ml-2">{{ qntGames }} jogo(s) de {{ qntDezenas }} dezenas</span></div>
+      <div class="describe cote mt-3 items-center" fxFlex="100" fxLayout="row" style="display: inline-block;"><mat-icon style="font-size: 24px; width: 30px; height: 30px;">confirmation_number</mat-icon>
+        <div class="ml-1" fxLayout="column">
+          <span>15 / 15 (restam 0 cotas)</span>
+          <span>R$15,00 por cota</span></div>
+        </div>
+      <div class="describe award mt-3 mb-2 items-center" fxFlex="100"><span>{{ award }}</span></div>
+    </div>
+    <div><button mat-raised-button color="primary" class="rounded-30 sub z-20">Participar</button></div>
   </div>
+  <img src="./assets/img/icon.svg" class="fundo">
 </div>

@@ -15,6 +15,8 @@ import { CarouselComponent } from './view/components/carousel/carousel.component
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BoloesComponent } from './view/components/boloes/boloes.component';
 import { CardsComponent } from './view/components/cards/cards.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -33,9 +35,13 @@ import { CardsComponent } from './view/components/cards/cards.component';
     ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
+    FlexLayoutModule,
+    FontAwesomeModule,
+    FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    MaterialModule
+    MaterialModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
