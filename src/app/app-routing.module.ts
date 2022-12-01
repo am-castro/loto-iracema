@@ -3,6 +3,8 @@ import { LoginComponent } from './view/login/login.component';
 import { PrincipalComponent } from './view/principal/principal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BolaoComponent } from './view/bolao/bolao.component';
+import { ResultComponent } from './view/result/result.component';
 
 const routes: Routes = [
   {
@@ -15,6 +17,10 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'resultados',
+    component: ResultComponent
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
@@ -23,8 +29,12 @@ const routes: Routes = [
     component: PrincipalComponent
   },
   {
+    path: 'bolao/:id',
+    component: BolaoComponent
+  },
+  {
     path: '**',
-    redirectTo: '/login'
+    redirectTo: '/home'
   }
 ];
 

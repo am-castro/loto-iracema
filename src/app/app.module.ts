@@ -17,6 +17,12 @@ import { BoloesComponent } from './view/components/boloes/boloes.component';
 import { CardsComponent } from './view/components/cards/cards.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BolaoComponent } from './view/bolao/bolao.component';
+import { FooterComponent } from './view/components/footer/footer.component';
+import { ToolbarComponent } from './view/components/toolbar/toolbar.component';
+import { AboutComponent } from './view/components/about/about.component';
+import { ContactComponent } from './view/components/contact/contact.component';
+import { ResultComponent } from './view/result/result.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomeComponent,
     CarouselComponent,
     BoloesComponent,
-    CardsComponent
+    CardsComponent,
+    BolaoComponent,
+    FooterComponent,
+    ToolbarComponent,
+    AboutComponent,
+    ContactComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

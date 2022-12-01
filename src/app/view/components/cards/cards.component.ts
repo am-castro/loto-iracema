@@ -10,6 +10,8 @@ import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 export class CardsComponent implements OnInit {
 
   @Input() card: any;
+  public concurso = 2556;
+  id = 5;
   public icons = {calendar: faCalendarCheck, clock: faClock, award: faClock};
   qntGames = 1;
   qntDezenas = 2;

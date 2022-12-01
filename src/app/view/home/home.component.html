@@ -1,31 +1,8 @@
-<div class="linha">
-  <div class="topo1"></div>
-  <div class="topo2"></div>
-  <div class="topo3"></div>
-</div>
-<mat-toolbar>
-  <div class="toolbar md:mr-60 md:ml-60 row-auto flex text-center">
-    <img src="./assets/img/logo-iracema.png">
-    <div class="menu max-[600px]:hidden block">
-      <button mat-button class="active button">Bolões</button>
-      <button mat-button class="button">Resultados</button>
-      <button mat-button class="button">Contato</button>
-      <button mat-button class="button">Dúvidas</button>
-    </div>
-    <div class="hidden max-[600px]:block">
-      <button mat-icon-button><mat-icon>menu</mat-icon></button>
-    </div>
-  </div>
-</mat-toolbar>
+<app-toolbar></app-toolbar>
 <div class="content">
   <app-carousel></app-carousel>
   <app-boloes></app-boloes>
+  <app-about></app-about>
+  <app-contact></app-contact>
 </div>
-<footer>
-  <div class="linha">
-    <div class="topo1"></div>
-    <div class="topo2"></div>
-    <div class="topo3"></div>
-  </div>
-
-</footer>
+<app-footer></app-footer>

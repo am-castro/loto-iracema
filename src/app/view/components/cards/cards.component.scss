@@ -7,8 +7,17 @@
 .green-3{
   color: #89C2A0;
 }
+.font-20{
+  font-size: 20px;
+}
+.font-22{
+  font-size: 22px;
+}
 .font-24{
   font-size: 24px;
+}
+.font-26{
+  font-size: 26px;
 }
 .border-r-16{
   border-right-width: 16px;
@@ -45,4 +54,16 @@
   height: 200px;
   margin-left: 25%;
   z-index: 1;
+}
+
+@media screen and (max-width: 600px){
+  .text-xl{
+    font-size: 18px;
+  }
+  .date{
+    font-size: 14px;
+  }
+  .w-10{
+    width: 2rem;
+  }
 }

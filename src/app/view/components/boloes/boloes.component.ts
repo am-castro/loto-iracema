@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoloesComponent implements OnInit {
 
-  cards = ['','','','','','','','','','','','','','','','','','']
+  cards = ['','','','','','','']
   constructor() { }
 
   ngOnInit(): void {

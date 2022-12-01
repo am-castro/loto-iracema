@@ -1,0 +1,19 @@
+<div class="linha">
+  <div class="topo1"></div>
+  <div class="topo2"></div>
+  <div class="topo3"></div>
+</div>
+<mat-toolbar>
+  <div class="toolbar md:mr-60 md:ml-60 row-auto flex text-center">
+    <img src="./assets/img/logo-iracema.png">
+    <div class="menu max-[600px]:hidden block">
+      <button mat-button class="button" routerLinkActive="activeButton" routerLink="/home">Bolões</button>
+      <button mat-button class="button" routerLinkActive="activeButton" routerLink="/resultados">Resultados</button>
+      <button mat-button class="button" href="/home#contato" routerLinkActive="activeButton">Contato</button>
+      <button mat-button class="button" routerLinkActive="activeButton" routerLink="/home">Dúvidas</button>
+    </div>
+    <div class="hidden max-[600px]:block">
+      <button mat-icon-button><mat-icon>menu</mat-icon></button>
+    </div>
+  </div>
+</mat-toolbar>

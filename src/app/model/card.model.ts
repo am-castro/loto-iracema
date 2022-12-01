@@ -1,0 +1,35 @@
+
+export class CardModel{
+  id: number;
+  type: number;
+}
+
+
+export enum cardType{
+  MEGA_SENA = 1,
+  MEGA_DA_VIRADA = 2,
+  MAIS_MILIONARIA = 3,
+  LOTO_FACIL = 4,
+  QUINA = 5,
+  LOTO_MANIA = 6,
+  TIME_MANIA = 7,
+  DUPLA_SENA = 8,
+  FEDERAL = 9,
+  LOTECA = 10,
+  DIA_DE_SORTE = 11,
+  SUPER_SETE = 12
+}
+export enum cardName{
+  MEGA_SENA = 'MEGA-SENA',
+  MEGA_DA_VIRADA = 'MEGA DA VIRADA',
+  MAIS_MILIONARIA = '+MILIONÁRIA',
+  LOTO_FACIL = 'LOTOFÁCIL',
+  QUINA = 'QUINA',
+  LOTO_MANIA = 'LOTOMANIA',
+  TIME_MANIA = 'TIMEMANIA',
+  DUPLA_SENA = 'DUPLA SENA',
+  FEDERAL = 'FEDERAL',
+  LOTECA = 'LOTECA',
+  DIA_DE_SORTE = 'DIA DE SORTE',
+  SUPER_SETE = 'SUPER SETE'
+}
