@@ -13,15 +13,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { CarouselComponent } from './view/components/carousel/carousel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BoloesComponent } from './view/components/boloes/boloes.component';
-import { CardsComponent } from './view/components/cards/cards.component';
+import { BoloesComponent } from './view/boloes/boloes.component';
+import { CardsComponent } from './view/components/card/card.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BolaoComponent } from './view/bolao/bolao.component';
 import { FooterComponent } from './view/components/footer/footer.component';
 import { ToolbarComponent } from './view/components/toolbar/toolbar.component';
-import { AboutComponent } from './view/components/about/about.component';
-import { ContactComponent } from './view/components/contact/contact.component';
+import { AboutComponent } from './view/about/about.component';
+import { ContactComponent } from './view/contact/contact.component';
 import { ResultComponent } from './view/result/result.component';
 
 @NgModule({

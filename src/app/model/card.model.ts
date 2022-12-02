@@ -1,25 +1,31 @@
 
 export class CardModel{
   id: number;
-  type: number;
+  type: string;
+  qntGames: number;
+  qntDezenas: number;
+  concurso: number;
+  qntCota: number;
+  qntTotalCota: number;
+  vlCota: string;
+  vlPremio: string;
+  dtPremio: Date;
+
+  constructor(obj: CardModel){
+    this.id = obj && obj.id ? obj.id : 0;
+    this.type = obj && obj.type ? obj.type : enumCardName.MEGA_SENA;
+    this.qntGames = obj && obj.qntGames ? obj.qntGames : 0;
+    this.qntDezenas = obj && obj.qntDezenas ? obj.qntDezenas : 0;
+    this.concurso = obj && obj.concurso ? obj.concurso : 0;
+    this.qntCota = obj && obj.qntCota ? obj.qntCota : 0;
+    this.qntTotalCota = obj && obj.qntTotalCota ? obj.qntTotalCota : 0;
+    this.vlCota = obj && obj.vlCota ? obj.vlCota : '';
+    this.vlPremio = obj && obj.vlPremio ? obj.vlPremio : '';
+    this.dtPremio = obj && obj.dtPremio ? obj.dtPremio : new Date();
+  }
 }
 
-
-export enum cardType{
-  MEGA_SENA = 1,
-  MEGA_DA_VIRADA = 2,
-  MAIS_MILIONARIA = 3,
-  LOTO_FACIL = 4,
-  QUINA = 5,
-  LOTO_MANIA = 6,
-  TIME_MANIA = 7,
-  DUPLA_SENA = 8,
-  FEDERAL = 9,
-  LOTECA = 10,
-  DIA_DE_SORTE = 11,
-  SUPER_SETE = 12
-}
-export enum cardName{
+export enum enumCardName{
   MEGA_SENA = 'MEGA-SENA',
   MEGA_DA_VIRADA = 'MEGA DA VIRADA',
   MAIS_MILIONARIA = '+MILIONÁRIA',
