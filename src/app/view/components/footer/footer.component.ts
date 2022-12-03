@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  public icons = {whatsapp: faWhatsapp, email: faMailBulk};
   constructor() { }
 
   ngOnInit(): void {

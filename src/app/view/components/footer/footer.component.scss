@@ -1,0 +1,33 @@
+.btn-answer{
+    background-color: #2E679A;
+}
+ul{
+    color: #f0f0f0;
+}
+.font-15{
+    font-size: 20px;
+}
+.w-170{
+    width: 170px;
+}
+::ng-deep .mat-expansion-panel-header,
+.mat-expansion-toggle-indicator-after,
+.mat-expanded:hover,
+.mat-expansion-panel-header:hover,
+.mat-focus-indicator,
+.mat-focus-indicator:hover,
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-title:hover,
+.mat-expansion-panel,
+.mat-expansion-panel:hover{
+    background-color: #2E679A;
+    color: #FFFFFF;
+}
+::ng-deep .mat-expansion-panel-body{
+    background-color: #FFFFFF;
+    color: #000;
+}
+
+@media (min-width: 768px) {
+
+}

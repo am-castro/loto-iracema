@@ -1,7 +1,62 @@
-<footer>
+
+<footer id="footer">
   <div class="linha">
     <div class="topo1"></div>
     <div class="topo2"></div>
     <div class="topo3"></div>
+  </div>
+  <div class="pt-4" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="start start">
+    <div fxFlex="100" fxLayoutAlign="center center">
+      <button class="rounded-full btn-answer text-white pt-2 pb-2 pl-8 pr-8 text-xl">Sobre nós</button>
+    </div>
+    <mat-accordion fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-around start" class="pt-4">
+      <mat-expansion-panel fxFlex.gt-md="45" fxFlex="80" class="m-2" >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Os bolões são os mesmos da loteria?</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p class="p-1">Isso! É exatamente o mesmo tipo de jogo para você apostar a qualquer momento do conforto da sua casa!</p>
+      </mat-expansion-panel>
+      <mat-expansion-panel fxFlex.gt-md="45" fxFlex="80" class="m-2">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Como funciona o pagamento?</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p class="p-1">Basta escolher seu bolão no nosso site,
+          preencher seus dados no formulário e efetuar o pagamento na próxima página.
+          Nossos atendentes irão entrar em contato através do Whatsapp para confirmar a sua aposta e pronto,
+          é só esperar a sorte te encontrar!</p>
+      </mat-expansion-panel>
+      <mat-expansion-panel fxFlex.gt-md="45" fxFlex="80" class="m-2">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Se eu ganhar, como faço para receber o prêmio?</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p class="p-1">Primeiramente, parabéns! Fala com a gente pelo whatsapp que estaremos verificando seus dados para dar início ao processo de entrega do seu prêmio.</p>
+      </mat-expansion-panel>
+      <mat-expansion-panel fxFlex.gt-md="45" fxFlex="80" class="m-2">
+        <mat-expansion-panel-header>
+          <mat-panel-title>As apostas individuais são as mesmas da lotérica?</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p class="p-1">Exatamente as mesmas! Basta você selecionar os números e seguir os próximos passos.</p>
+      </mat-expansion-panel>
+      <mat-expansion-panel fxFlex.gt-md="45" fxFlex="80" class="m-2">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Onde confiro o resultado dos jogos?</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p class="p-1">Os resultados saem ao vivo no canal do YouTube da Caixa Econômica Federal: <a href='https://www.youtube.com/user/canalcaixa' target="_blank">Clique para ir para o canal oficial caixa</a></p>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-around start">
+      <div fxLayout.gt-lg="row wrap" fxLayout.gt-sm="column"fxFlex.gt-lg="40">
+        <li fxFlex="60">
+          <ul><h2>Contato:</h2></ul>
+          <ul class="flex items-center"><fa-icon [icon]="icons.whatsapp" class="pr-1 font-15"></fa-icon>(85) 3274.7360</ul>
+          <ul class="flex items-center"><fa-icon [icon]="icons.email" class="pr-1 font-15"></fa-icon>lotericairacema@gmail.com</ul>
+        </li>
+        <li fxFlex="40">
+          <ul><h2>Horário de atendimento</h2></ul>
+          <ul class="flex items-center" fxLayout="row"><span class="w-170">Segunda à Sexta:</span><span>07:30 - 18:00</span></ul>
+          <ul class="flex items-center" fxLayout="row"><span class="w-170">Sábado:</span><span>07:30 - 13:00</span></ul>
+        </li>
+      </div>
+    </div>
   </div>
 </footer>

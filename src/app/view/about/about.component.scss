@@ -2,9 +2,43 @@
   background-color: #1E364B;
   height: 30rem;
   color: rgb(245, 245, 245);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
 img{
   object-fit: cover;
+}
+.div-about{
+  position: absolute;
+  margin-left: -77.055px;
+  margin-top: 20px;
+}
+.btn-about{
+  background-color: #FF9300;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+.p-7{
+  padding: 4rem;
+  padding-left: 8rem;
+}
+@media screen and (max-width: 1000px){
+  .div-about{
+    position: unset;
+    margin-left: unset;
+    margin-top: -650px;
+  }
+  .p-7{
+    padding-left: 4rem;
+  }
+  #img{
+    display: none;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 1000px){
+  .div-about{
+    position: unset;
+    margin-left: unset;
+    margin-top: -700px;
+  }
 }

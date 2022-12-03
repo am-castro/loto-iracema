@@ -23,6 +23,7 @@ import { ToolbarComponent } from './view/components/toolbar/toolbar.component';
 import { AboutComponent } from './view/about/about.component';
 import { ContactComponent } from './view/contact/contact.component';
 import { ResultComponent } from './view/result/result.component';
+import { FormSendMessageComponent } from './view/components/form-send-message/form-send-message.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ResultComponent } from './view/result/result.component';
     ToolbarComponent,
     AboutComponent,
     ContactComponent,
-    ResultComponent
+    ResultComponent,
+    FormSendMessageComponent
   ],
   imports: [
     BrowserModule,
