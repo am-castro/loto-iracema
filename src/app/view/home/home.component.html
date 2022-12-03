@@ -1,4 +1,4 @@
-<app-toolbar></app-toolbar>
+<app-toolbar id="toolbar"></app-toolbar>
 <div class="content">
   <app-carousel></app-carousel>
   <app-boloes></app-boloes>
@@ -6,3 +6,6 @@
   <app-contact></app-contact>
 </div>
 <app-footer></app-footer>
+
+<button mat-fab color="primary" id="whatsapp" matTooltip="Clique aqui para falar pelo whatsapp" matTooltipPosition="before"><fa-icon [icon]="icons.whatsapp" style="font-size: 24px;"></fa-icon></button>
+<button mat-fab color="accent" id="toTop" matTooltip="Clique para subir para o topo" matTooltipPosition="before"><fa-icon [icon]="icons.arrowUp" style="font-size: 20px;"></fa-icon></button>

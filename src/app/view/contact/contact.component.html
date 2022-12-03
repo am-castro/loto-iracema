@@ -4,19 +4,19 @@
             <button class="rounded-full btn-contact text-white pt-2 pb-2 pl-8 pr-8 text-xl">Contato</button>
         </div>
 
-        <div fxFlex="50" class="mt-2" fxFlex="column wrap">
-            <div class="flex items-center" fxFlex="row">
-                <mat-icon style="width: 80px; height: 80px; font-size: 80px; color: #1E364B;">location_on</mat-icon>
-                <div fxLayout="column">
-                    <h2 style="color: #1E364B;">Endereço</h2>
-                    <span>Rua: Coronel Francisco Pereira, 39</span>
-                    <span>Bairro: Messejana</span>
-                </div>
+        <div class="flex items-center mt-4" fxFlex="row" fxFlex="100">
+            <mat-icon style="width: 80px; height: 80px; font-size: 80px; color: #1E364B;">location_on</mat-icon>
+            <div fxLayout="column">
+                <h2 style="color: #1E364B;">Endereço</h2>
+                <span>Rua: Coronel Francisco Pereira, 39</span>
+                <span>Bairro: Messejana</span>
             </div>
-            <div class="mapouter" fxFlex="90"><div class="gmap_canvas"><iframe class="gmap_iframe" width="90%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q= Coronel Francisco Pereira, 39&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://formatjson.org/">format json</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>
+        </div>
+        <div fxFlex.gt-sm="40" fxFlex="100" class="mt-4">
+            <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q= Coronel Francisco Pereira, 39&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://formatjson.org/">format json</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>
         </div>
 
-        <div fxFlex.gt-sm="50" fxFlex="0">
+        <div fxFlex.gt-sm="50" fxFlex="100" class="mt-4">
             <app-form-send-message></app-form-send-message>
         </div>
     </div>
