@@ -24,6 +24,7 @@ import { AboutComponent } from './view/about/about.component';
 import { ContactComponent } from './view/contact/contact.component';
 import { ResultComponent } from './view/result/result.component';
 import { FormSendMessageComponent } from './view/components/form-send-message/form-send-message.component';
+import { ResultsComponent } from './view/results/results.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { FormSendMessageComponent } from './view/components/form-send-message/fo
     AboutComponent,
     ContactComponent,
     ResultComponent,
+    ResultsComponent,
     FormSendMessageComponent
   ],
   imports: [

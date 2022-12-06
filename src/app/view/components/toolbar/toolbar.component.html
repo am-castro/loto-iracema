@@ -7,11 +7,11 @@
   <div class="toolbar md:mr-60 md:ml-60 row-auto flex text-center">
     <img src="./assets/img/logo-iracema.png">
     <div class="menu max-[600px]:hidden block">
-      <button mat-button class="button" routerLinkActive="activeButton" routerLink="/home">Bolões</button>
-      <button mat-button class="button" routerLinkActive="activeButton" routerLink="/resultados">Resultados</button>
-      <button mat-button class="button" (click)="redirectTo('about')" routerLinkActive="activeButton">Sobre</button>
-      <button mat-button class="button" (click)="redirectTo('contact')" routerLinkActive="activeButton">Contato</button>
-      <button mat-button class="button" routerLinkActive="activeButton" routerLink="/home">Dúvidas</button>
+      <button mat-raised-button class="button boloes" routerLink="/home">Bolões</button>
+      <button mat-raised-button class="button resultados" routerLink="/resultados">Resultados</button>
+      <button mat-raised-button class="button sobre" (click)="redirectTo('about')" routerLinkActive="activeButton">Sobre</button>
+      <button mat-raised-button class="button contato" (click)="redirectTo('contact')" routerLinkActive="activeButton">Contato</button>
+      <button mat-raised-button class="button duvidas" routerLinkActive="activeButton" routerLink="/home">Dúvidas</button>
     </div>
     <div class="hidden max-[600px]:block">
       <button mat-icon-button><mat-icon>menu</mat-icon></button>

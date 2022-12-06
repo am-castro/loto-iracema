@@ -19,8 +19,10 @@ export class ToolbarComponent implements OnInit {
       this.route.navigate(['home']);
       setTimeout(()=>{
         element = document.getElementById("about");
-        element.scrollIntoView({behavior: "smooth"})
+        element.scrollIntoView({behavior: "smooth"});
       }, 500);
+      let y = window.scrollY - window.innerHeight/2;
+      window.scroll(0, y);
     }
     if(redirect=='contact'){
       this.route.navigate(['home']);
