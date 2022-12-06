@@ -1,27 +1,29 @@
 body{
   background-color: #f5f5f5;
 }
+.mt-25{
+  margin-top: 25px;
+}
 .linha {
   display: flex;
-  margin-top: 0;
+  height: 7px;
 }
 .linha .topo1 {
-  width: 33.4%;
+  width: 33.33%;
   height: 7px;
   background: #005dad;
 }
 .linha .topo2 {
-  width: 33.4%;
+  width: 33.33%;
   height: 7px;
   background: #ff9300;
 }
 .linha .topo3 {
-  width: 33.4%;
+  width: 33.33%;
   height: 7px;
   background: #005dad;
 }
 footer{
-  margin-top: 25px;
   background-color: #1E364B;
   min-height: 300px;
 }

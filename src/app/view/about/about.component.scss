@@ -22,11 +22,11 @@ img{
   padding: 4rem;
   padding-left: 8rem;
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 960px){
   .div-about{
     position: unset;
     margin-left: unset;
-    margin-top: -650px;
+    margin-top: -600px;
   }
   .p-7{
     padding-left: 4rem;
@@ -35,7 +35,7 @@ img{
     display: none;
   }
 }
-@media screen and (min-width: 300px) and (max-width: 1000px){
+@media screen and (min-width: 300px) and (max-width: 600px){
   .div-about{
     position: unset;
     margin-left: unset;

@@ -6,6 +6,11 @@ module.exports = {
     "./src/**/**/**/*.{html,ts}",
   ],
   theme: {
+    extend: {
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      }
+    },
     fontSize: {
       sm: '0.8rem',
       base: '1rem',

@@ -14,3 +14,21 @@
   bottom: 2rem;
   right: 2rem;
 }
+// .not-show-slow{
+//   transition: opacity 0.3s linear;
+//   opacity: 0;
+//   pointer-events: none;
+// }
+// .show-slow{
+//   opacity: 1;
+//   transition: opacity .3s linear;
+//   pointer-events: all;
+// }
+@media screen and (max-width: 760px) {
+  #whatsapp{
+    right: 1rem;
+  }
+  #toTop{
+    right: 1rem;
+  }
+}

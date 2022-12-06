@@ -1,13 +1,13 @@
 
-<footer id="footer">
-  <div class="linha">
+<div class="linha mt-25">
     <div class="topo1"></div>
     <div class="topo2"></div>
     <div class="topo3"></div>
-  </div>
+</div>
+<footer id="footer">
   <div class="pt-4" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="start start">
     <div fxFlex="100" fxLayoutAlign="center center">
-      <button class="rounded-full btn-answer text-white pt-2 pb-2 pl-8 pr-8 text-xl">Sobre nós</button>
+      <button class="rounded-full btn-answer text-white pt-2 pb-2 pl-8 pr-8 text-xl">Perguntas frequentes</button>
     </div>
     <mat-accordion fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-around start" class="pt-4">
       <mat-expansion-panel fxFlex.gt-md="45" fxFlex="80" class="m-2" >
@@ -45,17 +45,27 @@
       </mat-expansion-panel>
     </mat-accordion>
     <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-around start">
-      <div fxLayout.gt-lg="row wrap" fxLayout.gt-sm="column"fxFlex.gt-lg="40">
-        <li fxFlex="60">
+      <div fxLayout.gt-md="row wrap" fxLayout.gt-sm="column" fxFlex.gt-md="40">
+        <li fxFlex.gt-md="60">
           <ul><h2>Contato:</h2></ul>
-          <ul class="flex items-center"><fa-icon [icon]="icons.whatsapp" class="pr-1 font-15"></fa-icon>(85) 3274.7360</ul>
-          <ul class="flex items-center"><fa-icon [icon]="icons.email" class="pr-1 font-15"></fa-icon>lotericairacema@gmail.com</ul>
+          <ul class="flex items-center"><fa-icon [icon]="icons.whatsapp" class="pr-2 font-20"></fa-icon><span>(85) 3274.7360</span></ul>
+          <ul class="flex items-center"><fa-icon [icon]="icons.email" class="pr-2 font-20"></fa-icon><span>lotericairacema@gmail.com</span></ul>
         </li>
-        <li fxFlex="40">
+        <li fxFlex.gt-md="40">
           <ul><h2>Horário de atendimento</h2></ul>
-          <ul class="flex items-center" fxLayout="row"><span class="w-170">Segunda à Sexta:</span><span>07:30 - 18:00</span></ul>
-          <ul class="flex items-center" fxLayout="row"><span class="w-170">Sábado:</span><span>07:30 - 13:00</span></ul>
+          <ul class="flex items-center" fxLayout="row"><span class="w-130">Segunda à Sexta:</span><span>07:30 - 18:00</span></ul>
+          <ul class="flex items-center" fxLayout="row"><span class="w-130">Sábado:</span><span>07:30 - 13:00</span></ul>
         </li>
+      </div>
+      <div fxFlex="100" fxLayout="column">
+        <div fxLayout="row" fxFlex="100" fxLayoutAlign="center start" fxLayoutGap="20px">
+          <div><button mat-mini-fab class="social"><fa-icon [icon]="icons.facebook" class="font-15"></fa-icon></button></div>
+          <div><button mat-mini-fab class="social"><fa-icon [icon]="icons.instagram" class="font-15"></fa-icon></button></div>
+        </div>
+        <div fxLayout="column" fxFlex="100" fxLayoutAlign="center start">
+          <span class="font-medium white">Loteria Iracema</span>
+          <span class="white">todos os direitos reservados</span>
+        </div>
       </div>
     </div>
   </div>

@@ -31,11 +31,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/material/green-base.css",
-              "src/assets/css/style.css",
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "src/assets/css/style.css",
+              "src/assets/css/material/green-base.css",
               "src/styles.scss"
             ],
             "scripts": [

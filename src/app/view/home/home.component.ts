@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,12 +8,36 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent{
 
   public icons = {whatsapp: faWhatsapp, arrowUp: faArrowUp}
-  constructor() { }
+  constructor(private router: Router) {
+    console.log(
+      `
 
-  ngOnInit(): void {
+
+
+
+      Olá, tudo bem com você?
+      Meu nome é Marcos, o dev por trás do site.
+      Aqui está meu portfólio, acesse:
+      https://am-castro.github.io
+
+      Vamos trabalhar juntos?
+
+
+
+
+      `
+    )
   }
 
+  public toTop(){    
+    let element: any = document.getElementById("toolbar");
+    element.scrollIntoView({behavior: "smooth"});
+  }
+
+  public getOffSet(){
+    return window.scrollY;
+  }
 }

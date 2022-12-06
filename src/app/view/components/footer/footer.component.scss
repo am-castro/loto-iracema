@@ -5,17 +5,18 @@ ul{
     color: #f0f0f0;
 }
 .font-15{
+    font-size: 15px;
+}
+.font-20{
     font-size: 20px;
 }
-.w-170{
-    width: 170px;
+.w-130{
+    width: 130px;
 }
 ::ng-deep .mat-expansion-panel-header,
 .mat-expansion-toggle-indicator-after,
 .mat-expanded:hover,
 .mat-expansion-panel-header:hover,
-.mat-focus-indicator,
-.mat-focus-indicator:hover,
 .mat-expansion-panel-header-title,
 .mat-expansion-panel-header-title:hover,
 .mat-expansion-panel,
@@ -27,7 +28,9 @@ ul{
     background-color: #FFFFFF;
     color: #000;
 }
-
-@media (min-width: 768px) {
-
+.social{
+    background-color: #C17113;
+}
+.white{
+    color: white;
 }
