@@ -1,19 +1,19 @@
-<form fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between start">
+<form [formGroup]="contatoForm" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between start" (ngSubmit)="submit()">
     <mat-form-field fxFlex="49" appearance="outline">
       <mat-label>Nome</mat-label>
-      <input matInput type="text" placeholder="Ex.: Antonina Silva">
+      <input matInput type="text" formControlName="nome" placeholder="Ex.: Antonina Silva">
     </mat-form-field>
     <mat-form-field fxFlex="49" appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput type="email" placeholder="Ex.: antonina@exemplo.com">
+        <input matInput type="email" formControlName="email" placeholder="Ex.: antonina@exemplo.com">
     </mat-form-field>
     <mat-form-field fxFlex="100" appearance="outline">
         <mat-label>Assunto</mat-label>
-        <input matInput type="text" placeholder="Ex.: Dúvida">
+        <input matInput type="text" formControlName="assunto" placeholder="Ex.: Dúvida">
     </mat-form-field>
     <mat-form-field fxFlex="100" appearance="outline">
         <mat-label>Mensagem</mat-label>
-        <textarea matInput type="text" placeholder="Ex. 100 Main St" rows="10"  placeholder="Ex.: Gostaria de saber como apostar"></textarea>
+        <textarea matInput type="text" formControlName="mensagem" placeholder="Ex. 100 Main St" rows="10"  placeholder="Ex.: Gostaria de saber como apostar"></textarea>
       </mat-form-field>
     <div fxFlex="100" fxLayout="row" fxLayoutAlign="center center">
         <button mat-raised-button class="rounded-30" color="accent" fxFlex="70"> Enviar mensagem</button>
