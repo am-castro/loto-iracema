@@ -1,1 +1,30 @@
-<p>usuarios works!</p>
+<div class="p-5 bg-white">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <mat-card-title>Solicitações dos usuários</mat-card-title>
+      <mat-card-subtitle>Solicitações de participações de usuários listados por ordem de pedidos (mais antigos encima)</mat-card-subtitle>
+      <!-- <span fxFlex></span>
+      <div>
+        <button mat-raised-button color="accent" (click)="novaSolicitacao()"><fa-icon [icon]="icons.plus"></fa-icon> NOVO</button>
+      </div> -->
+    </mat-card-header>
+    <mat-card-content>
+      <mat-tab-group color="accent">
+        <mat-tab label="Usuários ativos">
+          <!-- <app-user-table [ELEMENT_DATA]="ativos" *ngIf="ativos.length; else noData"></app-table> -->
+        </mat-tab>
+        <mat-tab label="Usuários bloqueados">
+          <!-- <app-table [ELEMENT_DATA]="bloqueados" *ngIf="bloqueados.length; else noData"></app-table> -->
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>
+<ng-template #noData>
+  <div fxFlex="100" fxLayout="row" fxLayoutAlign="center center">
+    <div fxLayout="column" fxLayoutAlign="center center" style="height: 200px;">
+      <mat-icon style="width: 102px; height: 102px; font-size: 102px;">desktop_mac</mat-icon>
+      <span style="font-size: 18px;">Sem dados para mostrar</span>
+    </div>
+  </div>
+</ng-template>

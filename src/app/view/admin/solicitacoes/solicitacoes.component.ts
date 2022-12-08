@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -23,7 +24,8 @@ export class SolicitacoesComponent implements OnInit{
   public concluidas: Array<any> = [];
   public naoConcluidas: Array<any> = [];
 
-  constructor(){
+  constructor(
+  ){
     this.concluidas = this.ELEMENT_DATA.filter(data=> data.concluida!=false);
     this.naoConcluidas = this.ELEMENT_DATA.filter(data=> data.concluida==false);
   }

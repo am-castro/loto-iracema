@@ -58,7 +58,7 @@ import { TableComponent } from './components/table/table.component';
     BoloesListComponent,
     UsuariosFormComponent,
     BoloesFormComponent,
-    TableComponent
+    TableComponent,
   ],
   imports: [
     BrowserModule,
