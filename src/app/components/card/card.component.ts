@@ -26,17 +26,16 @@ export class CardsComponent {
     }else if(cssClass == enumCardName.TIME_MANIA){
       return 'timemania';
     }else if(cssClass == enumCardName.DUPLA_SENA){
-
+      return 'duplasena';
     }else if(cssClass == enumCardName.FEDERAL){
-
+      return 'federal';
     }else if(cssClass == enumCardName.LOTECA){
-
+      return 'loteca';
     }else if(cssClass == enumCardName.DIA_DE_SORTE){
-
+      return 'diadesorte';
     }else if(cssClass == enumCardName.SUPER_SETE){
-
-    }
-    else{
+      return 'supersete';
+    }else{
       return 'milionaria';
     }
   }
