@@ -4,7 +4,7 @@
     <div fxLayout="row" class="items-center"><span class="font-bold mr-2 date">{{card.dtPremio}}</span><fa-icon [icon]="icons.calendar" style="font-size: 24px;"></fa-icon></div>
   </div>
   <div fxFlex="100" fxLayout.gt-md="row" fxLayout="row wrap" fxLayoutAlign="space-between end">
-    <div fxFlex="100" fxLayout="row wrap">
+    <div fxFlex="auto" fxLayout="row wrap">
       <div class="describe games mt-3 items-center" fxFlex="100" fxLayout="row">
         <mat-icon class="m-1">access_time</mat-icon>
         <span class="ml-2 md:text-xl">{{ card.qntGames }} jogo(s) de {{ card.qntDezenas }} dezenas</span>
@@ -19,7 +19,7 @@
     </div>
     <div fxFlex="auto" fxLayout="column" fxLayoutAlign="center center" class="font-black">
       <span>Concurso: {{ card.concurso }}</span>
-      <a href="https://wa.me/+558532747360?text=Olá, tudo bem com você? Gostaria de participar da cota do jogo com concurso de número {{card.concurso}}" target="_blank"><button mat-raised-button [disabled]="card.qntCota==card.qntTotalCota" class="rounded-30 btn-{{getClass(card.type)}} sub z-20" [routerLink]="['resultados', card.id]">Participar</button></a>
+      <a href="https://wa.me/+558532747360?text=Olá, tudo bem com você? Gostaria de participar da cota do jogo com concurso de número {{card.concurso}}" target="_blank" *ngIf="card.qntCota!=card.qntTotalCota"><button mat-raised-button class="rounded-30 btn-{{getClass(card.type)}} sub z-20" [routerLink]="['resultados', card.id]">Participar</button></a>
     </div>
   </div>
 </div>
