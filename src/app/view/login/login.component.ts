@@ -10,6 +10,7 @@ import { FormBuilder } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  public checked: boolean;
   public error: string = '';
   public loginFormGroup = this.formBuilder.group({
     username: '',
@@ -28,13 +29,17 @@ export class LoginComponent implements OnInit {
   public submit(){
     if(!this.loginFormGroup.value.username || !this.loginFormGroup.value.password){
       this.error = 'Preencha todos os campos';
-      this.toastr.error('Preencha todos os campos!');
+      this.toastr.info('Preencha todos os campos!');
     }else if(this.loginFormGroup.value.username !== 'admin' || this.loginFormGroup.value.password !== 'admin'){
       this.error = 'Login ou senha incorreto!';
-      this.toastr.error('Login ou senha incorreto!');
+      this.toastr.info('Login ou senha incorreto!');
     }else if(this.loginFormGroup.value.username === 'admin' && this.loginFormGroup.value.password === 'admin'){
       const jsonPrepared = JSON.stringify(this.setUser());
-      window.localStorage.setItem('hh.session',jsonPrepared);
+      if(this.checked){
+        window.localStorage.setItem('hh.session', jsonPrepared);
+      }else{
+        window.sessionStorage.setItem('hh.session', jsonPrepared)
+      }
       this.error = '';
       this.isLogged();
     }
@@ -49,22 +54,15 @@ export class LoginComponent implements OnInit {
 
   private isLogged(){
     let msg: string;
-    let type: number;
-
-    const logged = window.localStorage.getItem('hh.session');
+    const logged = window.sessionStorage.getItem('hh.session');
     if(logged){
       const authUser = JSON.parse(logged);
       msg = `Bem vindo ${authUser.username}!`;
-      type = 1;
-      if(authUser.isAdmin){
-        this.router.navigate(['admin', 'dashboard']);
-      }else{
-        this.router.navigate(['client', 'home']);
-      }
+      this.router.navigate(['admin','solicitacoes']);
+      this.toastr.success(msg);
     }else{
       msg = this.error ? this.error : 'Por favor, se autentique.';
-      type = 2
+      this.toastr.info(msg);
     }
-    this.toastr.success(msg);
   }
 }

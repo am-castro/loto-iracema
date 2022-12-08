@@ -21,7 +21,8 @@
           </p>
 
           <div class="button">
-              <button mat-raised-button color="primary" type="submit">Login</button>
+              <mat-checkbox mat-raised-button [(ngModel)]="checked" color="accent" style="color: rgb(36, 36, 36);" type="submit">Lembrar senha</mat-checkbox>
+              <button mat-raised-button color="accent" type="submit">Login</button>
           </div>
       </form>
   </div>

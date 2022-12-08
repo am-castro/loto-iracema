@@ -15,4 +15,8 @@ export class ToastService {
   public error(message: string, title = '', time = 5000){
     this.toastr.error(message, title, {progressBar: true, progressAnimation: 'decreasing', timeOut: time});
   }
+
+  public info(message: string, title = '', time = 5000){
+    this.toastr.info(message, title, {progressBar: true, progressAnimation: 'decreasing', timeOut: time});
+  }
 }

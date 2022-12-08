@@ -1,1 +1,24 @@
-<p>principal works!</p>
+<div class="linha" id="linhaTopo">
+  <div class="topo1"></div>
+  <div class="topo2"></div>
+  <div class="topo3"></div>
+</div>
+<mat-toolbar>
+  <div class="toolbar row-auto flex text-center">
+    <img src="./assets/img/logo-iracema.png">
+    <div class="menu max-[600px]:hidden block">
+      <button mat-raised-button class="button" id="solicitacoes" (click)="redirectTo('solicitacoes')">Solicitações</button>
+      <button mat-raised-button class="button" id="boloes" (click)="redirectTo('boloes')">Bolões</button>
+      <button mat-raised-button class="button" id="usuarios" (click)="redirectTo('usuarios')">Usuários</button>
+    </div>
+    <div class="hidden max-[600px]:block">
+      <button mat-icon-button [matMenuTriggerFor]="beforeMenu"><mat-icon>menu</mat-icon></button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item class="button" id="solicitacoes" (click)="redirectTo('solicitacoes')">Solicitações</button>
+        <button mat-menu-item class="button" id="boloes" (click)="redirectTo('boloes')">Bolões</button>
+        <button mat-menu-item class="button" id="usuarios" (click)="redirectTo('usuarios')">Usuários</button>
+      </mat-menu>
+    </div>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

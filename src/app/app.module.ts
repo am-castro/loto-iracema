@@ -27,6 +27,7 @@ import { FormSendMessageComponent } from './components/form-send-message/form-se
 import { ResultsComponent } from './view/results/results.component';
 import { FloatButtonComponent } from './components/float-button/float-button.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SolicitacoesComponent } from './view/admin/solicitacoes/solicitacoes.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ResultComponent,
     ResultsComponent,
     FormSendMessageComponent,
-    FloatButtonComponent
+    FloatButtonComponent,
+    SolicitacoesComponent
   ],
   imports: [
     BrowserModule,

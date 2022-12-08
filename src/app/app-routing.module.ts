@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BolaoComponent } from './view/bolao/bolao.component';
 import { ResultComponent } from './view/result/result.component';
+import { SolicitacoesComponent } from './view/admin/solicitacoes/solicitacoes.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,37 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    component: PrincipalComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/solicitacoes',
+        pathMatch: 'full'
+      },
+      {
+        path: 'solicitacoes',
+        component: SolicitacoesComponent
+      },
+      {
+        path: 'boloes',
+        component: SolicitacoesComponent
+      },
+      {
+        path: 'usuarios',
+        component: SolicitacoesComponent
+      },
+      {
+        path: '**',
+        redirectTo: '/solicitacoes',
+      }
+    ]
+  },
+  {
+    path: 'admin/boloes',
+    component: PrincipalComponent
+  },
+  {
+    path: 'admin/usuarios',
     component: PrincipalComponent
   },
   {
