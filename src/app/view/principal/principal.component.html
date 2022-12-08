@@ -15,9 +15,9 @@
     <div class="hidden max-[600px]:block">
       <button mat-icon-button [matMenuTriggerFor]="beforeMenu"><mat-icon>menu</mat-icon></button>
       <mat-menu #beforeMenu="matMenu" xPosition="before">
-        <button mat-menu-item class="button" id="solicitacoes" [routerLink]="['solicitacoes']">Solicitações</button>
-        <button mat-menu-item class="button" id="boloes" [routerLink]="['boloes']">Bolões</button>
-        <button mat-menu-item class="button" id="usuarios" [routerLink]="['usuarios']">Usuários</button>
+        <button mat-menu-item [routerLink]="['solicitacoes']">Solicitações</button>
+        <button mat-menu-item [routerLink]="['boloes']">Bolões</button>
+        <button mat-menu-item [routerLink]="['usuarios']">Usuários</button>
         <button mat-menu-item (click)="logoff()">Sair do sistema</button>
       </mat-menu>
     </div>
