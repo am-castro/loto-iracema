@@ -57,38 +57,94 @@
 }
 
 /* Colorações */
-.border-mega {
+.color-mega {
   border-color: #209869;
+  color: #2D6A17;
 }
-.border-milionaria {
+.color-milionaria {
   border-color: #2E3078;
+  color: #2E3078;
 }
-.border-lotofacil {
+.color-lotofacil {
   border-color: #930089;
+  color: #930089;
 }
-.border-quina {
-  border-color: #2D1885;
+.color-quina {
+  border-color: #323369;
+  color: #323369;
 }
-.border-lotomania {
+.color-lotomania {
   border-color: #F78100;
+  color: #F78100;
 }
-.border-timemania {
-  border-color: #2E3078;
+.color-timemania {
+  border-color: #5EE24D;
+  color: #5EE24D;
 }
-.border-duplasena {
-  border-color: #2E3078;
+.color-duplasena {
+  border-color: #A62927;
+  color: #A62927;
 }
-.border-federal {
-  border-color: #2E3078;
+.color-federal {
+  border-color: #1B4A99;
+  color: #1B4A99;
 }
-.border-loteca {
-  border-color: #2E3078;
+.color-loteca {
+  border-color: #F8433F;
+  color: #F8433F;
 }
-.border-diadesorte {
-  border-color: #2E3078;
+.color-diadesorte {
+  border-color: #CB8530;
+  color: #CB8530;
 }
-.border-supersete {
-  border-color: #2E3078;
+.color-supersete {
+  border-color: #A8CF45;
+  color: #A8CF45;
+}
+/* Botão bolão */
+.btn-mega {
+  background-color: #2D6A17;
+  color: #FFF;
+}
+.btn-milionaria {
+  background-color: #2E3078;
+  color: #FFF;
+}
+.btn-lotofacil {
+  background-color: #930089;
+  color: #FFF;
+}
+.btn-quina {
+  background-color: #323369;
+  color: #FFF;
+}
+.btn-lotomania {
+  background-color: #F78100;
+  color: #FFF;
+}
+.btn-timemania {
+  background-color: #5EE24D;
+  color: #000;
+}
+.btn-duplasena {
+  background-color: #A62927;
+  color: #FFF;
+}
+.btn-federal {
+  background-color: #1B4A99;
+  color: #FFF;
+}
+.btn-loteca {
+  background-color: #F8433F;
+  color: #FFF;
+}
+.btn-diadesorte {
+  background-color: #CB8530;
+  color: #FFF;
+}
+.btn-supersete {
+  background-color: #A8CF45;
+  color: #000;
 }
 
 @media screen and (max-width: 600px){

@@ -1,6 +1,6 @@
-<div class="rounded-30 bg-[#F0F0F0] green-1 border-{{getClass(card.type)}} border-l-16 border-r-16 pr-8 pl-8 pt-2 pb-2" fxLayout="row wrap">
+<div class="rounded-30 color-{{getClass(card.type)}} bg-[#F0F0F0] green-1 border-l-16 border-r-16 pr-8 pl-8 pt-2 pb-2" fxLayout="row wrap">
   <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
-    <div class="items-center" fxLayout="row"><img src="./assets/img/icon.svg" class="w-10 mr-2"><span class="font-black text-xl">{{ card.type }}</span></div>
+    <div class="items-center" fxLayout="row"><img src="./assets/img/icon-{{getClass(card.type)}}.png" class="w-10 mr-2"><span class="font-black text-xl">{{ card.type }}</span></div>
     <div fxLayout="row" class="items-center"><span class="font-bold mr-2 date">{{card.dtPremio}}</span><fa-icon [icon]="icons.calendar" style="font-size: 24px;"></fa-icon></div>
   </div>
   <div fxFlex="100" fxLayout.gt-md="row" fxLayout="row wrap" fxLayoutAlign="space-between end">
@@ -15,11 +15,11 @@
           <span>{{ card.qntCota }} / {{ card.qntTotalCota }} (restam {{ card.qntTotalCota - card.qntCota }} cotas)</span>
           <span>R${{ card.vlCota }} por cota</span></div>
         </div>
-      <div class="describe award mt-3 mb-2 items-center" fxFlex="100"><span>{{ card.vlPremio }}</span></div>
+      <div class="color-{{getClass(card.type)}} describe award mt-3 mb-2 items-center" fxFlex="100"><span>{{ card.vlPremio }}</span></div>
     </div>
     <div fxFlex="auto" fxLayout="column" fxLayoutAlign="center center" class="font-black">
       <span>Concurso: {{ card.concurso }}</span>
-      <button mat-raised-button [disabled]="card.qntCota==card.qntTotalCota" color="primary" class="rounded-30 sub z-20" [routerLink]="['resultados', card.id]">Participar</button>
+      <a href="https://wa.me/+558532747360?text=Olá, tudo bem com você? Gostaria de participar da cota do jogo com concurso de número {{card.concurso}}" target="_blank"><button mat-raised-button [disabled]="card.qntCota==card.qntTotalCota" class="rounded-30 btn-{{getClass(card.type)}} sub z-20" [routerLink]="['resultados', card.id]">Participar</button></a>
     </div>
   </div>
 </div>

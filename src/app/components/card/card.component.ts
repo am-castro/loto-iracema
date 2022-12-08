@@ -17,6 +17,8 @@ export class CardsComponent {
   getClass(cssClass: string){
     if(cssClass == enumCardName.MEGA_SENA || cssClass == enumCardName.MEGA_DA_VIRADA){
       return 'mega';
+    }else if(cssClass == enumCardName.MAIS_MILIONARIA){
+      return 'milionaria';
     }else if(cssClass == enumCardName.LOTO_FACIL){
       return 'lotofacil';
     }else if(cssClass == enumCardName.QUINA){
