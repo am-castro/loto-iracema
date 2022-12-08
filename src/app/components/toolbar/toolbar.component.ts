@@ -18,8 +18,9 @@ export class ToolbarComponent implements OnInit {
     if(redirect=='boloes'){
       this.route.navigate(['home']);
       setTimeout(()=>{
-        element = document.getElementById("boloes");
-        element.scrollIntoView({behavior: "smooth"}) - window.innerHeight/2;
+        element.scrollY = 0;
+        // element = document.getElementById("boloes");
+        // element.scrollIntoView({behavior: "smooth"}) - window.innerHeight/2;
         // let y = window.scrollY - window.innerHeight/2;
         // window.scroll(0, y);
       }, 500);
@@ -40,7 +41,6 @@ export class ToolbarComponent implements OnInit {
         element.scrollIntoView({behavior: "smooth"})
       }, 500);
     }else if(redirect=='footer'){
-      this.route.navigate(['footer']);
       setTimeout(()=>{
         element = document.getElementById("footer");
         element.scrollIntoView({behavior: "smooth"})
