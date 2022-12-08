@@ -1,1 +1,25 @@
-<p>usuarios-form works!</p>
+<div fxFlex="100" fxLayout="row wrap">
+  <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+    <h2>Criar novo usuário</h2>
+    <button mat-icon-button color="warn" [matDialogClose]=""><mat-icon>cancel</mat-icon></button>
+  </div>
+  <form fxFlex="100" fxLayout="row wrap">
+    <mat-form-field fxFlex="100">
+      <mat-label>Nome</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field fxFlex="100">
+      <mat-label>Email</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
+    <mat-form-field fxFlex="100">
+      <mat-label>Senha</mat-label>
+      <input matInput type="text">
+    </mat-form-field>
+    <div fxFlex="100" fxLayout="row">
+      <span fxFlex></span>
+      <button fxFlex="100" fxFlex.gt-md="30" mat-raised-button color="primary"> Cadastrar </button>
+    </div>
+  </form>
+
+</div>

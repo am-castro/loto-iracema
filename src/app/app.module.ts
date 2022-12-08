@@ -33,6 +33,7 @@ import { BoloesListComponent } from './view/admin/boloes-list/boloes-list.compon
 import { UsuariosFormComponent } from './view/admin/usuarios-form/usuarios-form.component';
 import { BoloesFormComponent } from './view/admin/boloes-form/boloes-form.component';
 import { TableComponent } from './components/table/table.component';
+import { UserTableComponent } from './components/user-table/user-table.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { TableComponent } from './components/table/table.component';
     UsuariosFormComponent,
     BoloesFormComponent,
     TableComponent,
+    UserTableComponent
   ],
   imports: [
     BrowserModule,
