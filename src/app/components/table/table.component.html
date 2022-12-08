@@ -1,0 +1,34 @@
+<!-- Início table -->
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
+  <ng-container matColumnDef="solicitacao">
+    <th mat-header-cell *matHeaderCellDef>
+      N° Solicitação
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.solicitacao}} </td>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Listar por Nome">
+      Nome do Cliente
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Listar por Data">
+      Data da Solicitação
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+  </ng-container>
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element" fxLayoutGap="10px">
+      <button mat-mini-fab matTooltipPosition="after" matTooltip="Visualizar a solicitação completa"><mat-icon>remove_red_eye</mat-icon></button>
+      <button mat-mini-fab matTooltipPosition="after" matTooltip="Ajustar essa solicitação"><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button *ngIf="element.concluida" color="warn" matTooltipPosition="after" matTooltip="Deseja reabrir essa solicitação?"><mat-icon>close</mat-icon></button>
+      <button mat-icon-button *ngIf="!element.concluida" color="warn" matTooltipPosition="after" matTooltip="Deseja marcar essa solicitação como concluída?"><mat-icon>checked</mat-icon></button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<!-- Fim table -->

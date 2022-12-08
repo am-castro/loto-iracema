@@ -28,6 +28,11 @@ import { ResultsComponent } from './view/results/results.component';
 import { FloatButtonComponent } from './components/float-button/float-button.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SolicitacoesComponent } from './view/admin/solicitacoes/solicitacoes.component';
+import { UsuariosComponent } from './view/admin/usuarios/usuarios.component';
+import { BoloesListComponent } from './view/admin/boloes-list/boloes-list.component';
+import { UsuariosFormComponent } from './view/admin/usuarios-form/usuarios-form.component';
+import { BoloesFormComponent } from './view/admin/boloes-form/boloes-form.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,12 @@ import { SolicitacoesComponent } from './view/admin/solicitacoes/solicitacoes.co
     ResultsComponent,
     FormSendMessageComponent,
     FloatButtonComponent,
-    SolicitacoesComponent
+    SolicitacoesComponent,
+    UsuariosComponent,
+    BoloesListComponent,
+    UsuariosFormComponent,
+    BoloesFormComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

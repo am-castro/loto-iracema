@@ -14,8 +14,8 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
   styleUrls: ['./spinner.component.scss']
 })
 export class SpinnerComponent implements OnDestroy {
+  public isSpinnerVisible: boolean = false;
 
-  public isSpinnerVisible: boolean = true;
   constructor(private router: Router, @Inject(DOCUMENT) private document: Document) {
     this.router.events.subscribe(event => {
         if (event instanceof NavigationStart) {

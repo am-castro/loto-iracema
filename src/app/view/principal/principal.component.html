@@ -7,18 +7,24 @@
   <div class="toolbar row-auto flex text-center">
     <img src="./assets/img/logo-iracema.png">
     <div class="menu max-[600px]:hidden block">
-      <button mat-raised-button class="button" id="solicitacoes" (click)="redirectTo('solicitacoes')">Solicitações</button>
-      <button mat-raised-button class="button" id="boloes" (click)="redirectTo('boloes')">Bolões</button>
-      <button mat-raised-button class="button" id="usuarios" (click)="redirectTo('usuarios')">Usuários</button>
+      <button mat-raised-button class="button" id="solicitacoes" [routerLinkActive]="['activeButton']" [routerLink]="['solicitacoes']">Solicitações</button>
+      <button mat-raised-button class="button" id="boloes" [routerLinkActive]="['activeButton']" [routerLink]="['boloes']">Bolões</button>
+      <button mat-raised-button class="button" id="usuarios" [routerLinkActive]="['activeButton']" [routerLink]="['usuarios']">Usuários</button>
+      <button mat-raised-button [matMenuTriggerFor]="userMenu" color="accent"><mat-icon style="width: 18px; height: 18px; font-size: 18px;">person</mat-icon>{{ usuarioAtual() }}</button>
     </div>
     <div class="hidden max-[600px]:block">
       <button mat-icon-button [matMenuTriggerFor]="beforeMenu"><mat-icon>menu</mat-icon></button>
       <mat-menu #beforeMenu="matMenu" xPosition="before">
-        <button mat-menu-item class="button" id="solicitacoes" (click)="redirectTo('solicitacoes')">Solicitações</button>
-        <button mat-menu-item class="button" id="boloes" (click)="redirectTo('boloes')">Bolões</button>
-        <button mat-menu-item class="button" id="usuarios" (click)="redirectTo('usuarios')">Usuários</button>
+        <button mat-menu-item class="button" id="solicitacoes" [routerLink]="['solicitacoes']">Solicitações</button>
+        <button mat-menu-item class="button" id="boloes" [routerLink]="['boloes']">Bolões</button>
+        <button mat-menu-item class="button" id="usuarios" [routerLink]="['usuarios']">Usuários</button>
+        <button mat-menu-item (click)="logoff()">Sair do sistema</button>
       </mat-menu>
     </div>
   </div>
 </mat-toolbar>
+<mat-menu #userMenu="matMenu" xPosition="before">
+  <button mat-menu-item disabled>Editar Perfil</button>
+  <button mat-menu-item (click)="logoff()">Logoff</button>
+</mat-menu>
 <router-outlet></router-outlet>

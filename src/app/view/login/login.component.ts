@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       if(this.checked){
         window.localStorage.setItem('hh.session', jsonPrepared);
       }else{
-        window.sessionStorage.setItem('hh.session', jsonPrepared)
+        window.sessionStorage.setItem('hh.session', jsonPrepared);
       }
       this.error = '';
       this.isLogged();
@@ -54,7 +54,12 @@ export class LoginComponent implements OnInit {
 
   private isLogged(){
     let msg: string;
-    const logged = window.sessionStorage.getItem('hh.session');
+    let logged;
+    if(this.checked){
+      logged = window.localStorage.getItem('hh.session');
+    }else{
+      logged = window.sessionStorage.getItem('hh.session');
+    }
     if(logged){
       const authUser = JSON.parse(logged);
       msg = `Bem vindo ${authUser.username}!`;

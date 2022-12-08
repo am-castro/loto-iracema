@@ -6,6 +6,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { BolaoComponent } from './view/bolao/bolao.component';
 import { ResultComponent } from './view/result/result.component';
 import { SolicitacoesComponent } from './view/admin/solicitacoes/solicitacoes.component';
+import { UsuariosFormComponent } from './view/admin/usuarios-form/usuarios-form.component';
+import { UsuariosComponent } from './view/admin/usuarios/usuarios.component';
+import { BoloesFormComponent } from './view/admin/boloes-form/boloes-form.component';
+import { BoloesListComponent } from './view/admin/boloes-list/boloes-list.component';
 
 const routes: Routes = [
   {
@@ -31,7 +35,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/solicitacoes',
+        redirectTo: '/admin/solicitacoes',
         pathMatch: 'full'
       },
       {
@@ -40,25 +44,21 @@ const routes: Routes = [
       },
       {
         path: 'boloes',
-        component: SolicitacoesComponent
+        component: BoloesListComponent
+      },
+      {
+        path: 'boloes/edit/:id',
+        component: BoloesFormComponent
       },
       {
         path: 'usuarios',
-        component: SolicitacoesComponent
+        component: UsuariosComponent
       },
       {
-        path: '**',
-        redirectTo: '/solicitacoes',
+        path: 'usuarios/edit/:id',
+        component: UsuariosFormComponent
       }
     ]
-  },
-  {
-    path: 'admin/boloes',
-    component: PrincipalComponent
-  },
-  {
-    path: 'admin/usuarios',
-    component: PrincipalComponent
   },
   {
     path: 'bolao/:id',
