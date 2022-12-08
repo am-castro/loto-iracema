@@ -10,7 +10,6 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 })
 export class HomeComponent{
 
-  public icons = {whatsapp: faWhatsapp, arrowUp: faArrowUp}
   constructor(private router: Router) {
     console.log(
       `
@@ -30,14 +29,5 @@ export class HomeComponent{
 
       `
     )
-  }
-
-  public toTop(){    
-    let element: any = document.getElementById("toolbar");
-    element.scrollIntoView({behavior: "smooth"});
-  }
-
-  public getOffSet(){
-    return window.scrollY;
   }
 }

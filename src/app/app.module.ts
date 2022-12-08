@@ -25,6 +25,7 @@ import { ContactComponent } from './view/contact/contact.component';
 import { ResultComponent } from './view/result/result.component';
 import { FormSendMessageComponent } from './view/components/form-send-message/form-send-message.component';
 import { ResultsComponent } from './view/results/results.component';
+import { FloatButtonComponent } from './view/components/float-button/float-button.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ResultsComponent } from './view/results/results.component';
     ContactComponent,
     ResultComponent,
     ResultsComponent,
-    FormSendMessageComponent
+    FormSendMessageComponent,
+    FloatButtonComponent
   ],
   imports: [
     BrowserModule,

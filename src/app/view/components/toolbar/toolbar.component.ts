@@ -15,7 +15,17 @@ export class ToolbarComponent implements OnInit {
 
   redirectTo(redirect: string){
     let element: any;
-    if(redirect=='about'){
+    if(redirect=='boloes'){
+      this.route.navigate(['home']);
+      setTimeout(()=>{
+        element = document.getElementById("boloes");
+        element.scrollIntoView({behavior: "smooth"}) - window.innerHeight/2;
+        // let y = window.scrollY - window.innerHeight/2;
+        // window.scroll(0, y);
+      }, 500);
+    }else if(redirect=='resultados'){
+      this.route.navigate(['resultados']);
+    }else if(redirect=='sobre'){
       this.route.navigate(['home']);
       setTimeout(()=>{
         element = document.getElementById("about");
@@ -23,11 +33,16 @@ export class ToolbarComponent implements OnInit {
       }, 500);
       let y = window.scrollY - window.innerHeight/2;
       window.scroll(0, y);
-    }
-    if(redirect=='contact'){
+    }else if(redirect=='contato'){
       this.route.navigate(['home']);
       setTimeout(()=>{
         element = document.getElementById("contact");
+        element.scrollIntoView({behavior: "smooth"})
+      }, 500);
+    }else if(redirect=='footer'){
+      this.route.navigate(['footer']);
+      setTimeout(()=>{
+        element = document.getElementById("footer");
         element.scrollIntoView({behavior: "smooth"})
       }, 500);
     }
