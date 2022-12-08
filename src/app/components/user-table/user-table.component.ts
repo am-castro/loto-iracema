@@ -9,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class UserTableComponent implements AfterViewInit, OnInit {
   @Input() ELEMENT_DATA: any;
-  displayedColumns: string[] = ['id', 'nome', 'email', 'action'];
+  displayedColumns: string[] = ['name', 'email', 'action'];
   @ViewChild(MatSort) sort: MatSort;
 
   public dataSource: any;
