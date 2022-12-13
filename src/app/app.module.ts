@@ -34,6 +34,7 @@ import { UsuariosFormComponent } from './view/admin/usuarios-form/usuarios-form.
 import { BoloesFormComponent } from './view/admin/boloes-form/boloes-form.component';
 import { TableComponent } from './components/table/table.component';
 import { UserTableComponent } from './components/user-table/user-table.component';
+import { AdminCardComponent } from './components/admin-card/admin-card.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { UserTableComponent } from './components/user-table/user-table.component
     UsuariosFormComponent,
     BoloesFormComponent,
     TableComponent,
-    UserTableComponent
+    UserTableComponent,
+    AdminCardComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@ export class CardModel{
   vlPremio: string;
   dtPremio: Date | string;
 
-  constructor(obj: CardModel){
+  constructor(obj?: CardModel){
     this.id = obj && obj.id ? obj.id : 0;
     this.type = obj && obj.type ? obj.type : enumCardName.MEGA_SENA;
     this.qntGames = obj && obj.qntGames ? obj.qntGames : 0;
