@@ -2,6 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
+import { startWith, map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-boloes-form',
@@ -20,8 +22,8 @@ export class BoloesFormComponent implements OnInit {
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
-      // startWith(''),
-      // map(value => this._filter(value || '')),
+      startWith(''),
+      map(value => this._filter(value || '')),
     );
   }
 

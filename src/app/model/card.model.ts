@@ -4,7 +4,7 @@ export class CardModel{
   type: string;
   qntGames: number;
   qntDezenas: number;
-  concurso: number;
+  concurso: number | string;
   qntCota: number;
   qntTotalCota: number;
   vlCota: string;
