@@ -5,7 +5,7 @@
 
     <div class="mt-10 md:ml-36 md:mr-36" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between center">
       <div *ngFor="let card of cards" fxFlex.gt-sm="100" fxFlex.gt-md="49" fxFlex.gt-lg="49" class="mt-2 mb-2">
-        <app-card [card]="card"></app-card>
+        <app-card [card]="card" [result]="true"></app-card>
       </div>
     </div>
 </div>

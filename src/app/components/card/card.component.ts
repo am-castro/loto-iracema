@@ -10,6 +10,7 @@ import { CardModel, enumCardName } from 'src/app/model/card.model';
 })
 export class CardsComponent {
 
+  @Input() result: boolean = false;
   @Input() card: CardModel;
   public icons = {calendar: faCalendarCheck, clock: faClock, award: faClock};
   constructor() { }
@@ -39,6 +40,33 @@ export class CardsComponent {
       return 'supersete';
     }else{
       return 'milionaria';
+    }
+  }
+  getUrl(url?: string){
+    if(url == enumCardName.MEGA_SENA || url == enumCardName.MEGA_DA_VIRADA){
+      return 'Mega-Sena.aspx';
+    }else if(url == enumCardName.MAIS_MILIONARIA){
+      return 'Mais-Milionaria.aspx';
+    }else if(url == enumCardName.LOTO_FACIL){
+      return 'Lotofacil.aspx';
+    }else if(url == enumCardName.QUINA){
+      return 'Quina.aspx';
+    }else if(url == enumCardName.LOTO_MANIA){
+      return 'Lotomania.aspx';
+    }else if(url == enumCardName.TIME_MANIA){
+      return 'Timemania.aspx';
+    }else if(url == enumCardName.DUPLA_SENA){
+      return 'Dupla-Sena.aspx';
+    }else if(url == enumCardName.FEDERAL){
+      return 'Federal.aspx';
+    }else if(url == enumCardName.LOTECA){
+      return 'Loteca.aspx';
+    }else if(url == enumCardName.DIA_DE_SORTE){
+      return 'Dia-de-Sorte.aspx';
+    }else if(url == enumCardName.SUPER_SETE){
+      return 'Super-Sete.aspx';
+    }else{
+      return 'Mais-Milionaria.aspx';
     }
   }
 }
