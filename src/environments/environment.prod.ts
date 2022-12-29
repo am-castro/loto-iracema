@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api_url: 'http://www.loteriairacema.com.br:3000/api/v1'
+  api_url: 'https://63ad4b63da81ba97619836db.mockapi.io/api/v1'
 };
