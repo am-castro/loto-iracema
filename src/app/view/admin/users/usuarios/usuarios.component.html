@@ -11,10 +11,10 @@
     <mat-card-content>
       <mat-tab-group color="accent">
         <mat-tab label="Usuários ativos">
-          <app-user-table [ELEMENT_DATA]="ativos" *ngIf="ativos.length; else noData"></app-user-table>
+          <app-user-table [dataSource]="ativos" *ngIf="ativos.length; else noData"></app-user-table>
         </mat-tab>
         <mat-tab label="Usuários bloqueados">
-          <app-user-table [ELEMENT_DATA]="bloqueados" *ngIf="bloqueados.length; else noData"></app-user-table>
+          <app-user-table [dataSource]="bloqueados" *ngIf="bloqueados.length; else noData"></app-user-table>
         </mat-tab>
       </mat-tab-group>
     </mat-card-content>

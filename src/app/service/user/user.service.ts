@@ -9,6 +9,10 @@ export class UserService {
 
   constructor(private route: Router) { }
 
+  public login(){
+    
+  }
+
   public usuarioAtual(){
     if(this.getSessionStorage()){
       return this.getSessionStorage().username;
@@ -20,8 +24,8 @@ export class UserService {
   }
 
   public matarSessao(){
-    window.sessionStorage.setItem('hh.session','');
-    window.localStorage.setItem('hh.session','');
+    window.sessionStorage.clear();
+    window.localStorage.clear();
     this.route.navigateByUrl('login');
   }
 

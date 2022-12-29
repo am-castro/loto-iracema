@@ -1,0 +1,10 @@
+<div fxFlex="100" fxLayout="row wrap">
+    <h1>Deletar {{data.name}}?</h1>
+    <span style="padding: 0 0 20px 0">
+        Você confirma deleção de {{data.name}}?
+    </span>
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex="100">
+        <button mat-button color="warn" (click)="close(false)">Não</button>
+        <button mat-raised-button color="accent" (click)="close(true)">Sim</button>
+    </div>
+</div>

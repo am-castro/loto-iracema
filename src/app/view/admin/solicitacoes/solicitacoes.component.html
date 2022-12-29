@@ -2,19 +2,19 @@
   <mat-card class="mat-elevation-z8">
     <mat-card-header>
       <mat-card-title>Solicitações dos Clientes</mat-card-title>
-      <mat-card-subtitle>Bolões que o cliente cadastrou no site</mat-card-subtitle>
-      <!-- <span fxFlex></span>
+      <mat-card-subtitle>Clientes com interesse em participar dos bolões.</mat-card-subtitle>
+      <span fxFlex></span>
       <div>
         <button mat-raised-button color="accent" (click)="novaSolicitacao()"><fa-icon [icon]="icons.plus"></fa-icon> NOVO</button>
-      </div> -->
+      </div>
     </mat-card-header>
     <mat-card-content>
       <mat-tab-group color="accent">
-        <mat-tab label="Solicitações em aberto">
-          <app-table [ELEMENT_DATA]="naoConcluidas" *ngIf="naoConcluidas.length; else noData"></app-table>
+        <mat-tab label="Solicitações em aberto" fxFlex="100">
+          <app-table [dataSource]="naoConcluidas()" (changeData)="changeData($event)" *ngIf="naoConcluidas().length; else noData" fxFlex="100"></app-table>
         </mat-tab>
-        <mat-tab label="Solicitações Concluídas">
-          <app-table [ELEMENT_DATA]="concluidas" *ngIf="concluidas.length; else noData"></app-table>
+        <mat-tab label="Solicitações Concluídas" fxFlex="100">
+          <app-table [dataSource]="concluidas()" (changeData)="changeData($event)" *ngIf="concluidas().length; else noData" fxFlex="100"></app-table>
         </mat-tab>
       </mat-tab-group>
     </mat-card-content>
@@ -24,7 +24,7 @@
   <div fxFlex="100" fxLayout="row" fxLayoutAlign="center center">
     <div fxLayout="column" fxLayoutAlign="center center" style="height: 200px;">
       <mat-icon style="width: 102px; height: 102px; font-size: 102px;">desktop_mac</mat-icon>
-      <span style="font-size: 18px;">Sem dados para mostrar</span>
+      <span style="font-size: 18px;">Todas as solicitações foram atendidas</span>
     </div>
   </div>
 </ng-template>

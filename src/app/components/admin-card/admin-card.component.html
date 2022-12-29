@@ -1,8 +1,9 @@
 <mat-card class="call">
     <mat-card-header fxLayout="row" fxLayoutAlign="space-between center" class="cheader">
         <mat-card-title>{{card.type}}</mat-card-title>
-        <div>
+        <div fxLayoutGap="10px">
             <button mat-mini-fab (click)="editCard()"><mat-icon>edit</mat-icon></button>
+            <button mat-mini-fab (click)="deleteCard()" color="warn"><mat-icon>delete</mat-icon></button>
         </div>
     </mat-card-header>
     <mat-card-content>

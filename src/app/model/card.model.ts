@@ -9,7 +9,7 @@ export class CardModel{
   qntTotalCota: number;
   vlCota: string;
   vlPremio: string;
-  dtPremio: Date | string;
+  dtPremio: Date;
 
   constructor(obj?: CardModel){
     this.id = obj && obj.id ? obj.id : 0;

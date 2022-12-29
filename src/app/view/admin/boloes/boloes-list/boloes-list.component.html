@@ -1,31 +1,25 @@
 <div class="admin-p-5 bg-white" fxFlex="100">
     <mat-card class="mat-elevation-z8">
       <mat-card-header>
-        <mat-card-title>Solicitações dos Clientes</mat-card-title>
-        <mat-card-subtitle>Bolões que o cliente cadastrou no site</mat-card-subtitle>
-        <!-- <span fxFlex></span>
+        <mat-card-title>Bolões</mat-card-title>
+        <mat-card-subtitle>Cadastro de bolões para os clientes visualizarem</mat-card-subtitle>
+        <span fxFlex></span>
         <div>
-          <button mat-raised-button color="accent" (click)="novaSolicitacao()"><fa-icon [icon]="icons.plus"></fa-icon> NOVO</button>
-        </div> -->
+          <button mat-raised-button color="accent" (click)="newBolao()"><fa-icon [icon]="icons.plus"></fa-icon> NOVO</button>
+        </div>
       </mat-card-header>
       <mat-card-content>
         <mat-tab-group color="accent">
           <mat-tab label="Bolões Ativos" fxLayoutAlign="start center">
             <div fxFlex="100" fxLayout="row wrap">
-              <div fxFlex.gt-lg="33" fxFlex.gt-md="50">
-                <app-admin-card [card]="card"></app-admin-card>
-              </div>
-              <div fxFlex.gt-lg="33" fxFlex.gt-md="50">
+              <div *ngFor="let card of activeCards()" fxFlex.gt-lg="33" fxFlex.gt-md="50">
                 <app-admin-card [card]="card"></app-admin-card>
               </div>
             </div>
           </mat-tab>
-          <mat-tab label="Bolões Inativos" fxLayoutAlign="start center">
+          <mat-tab label="Bolões Inativos" fxLayoutAlign="start center" [disabled]="true">
             <div fxFlex="100" fxLayout="row wrap">
-              <div fxFlex.gt-lg="33" fxFlex.gt-md="50">
-                <app-admin-card [card]="card"></app-admin-card>
-              </div>
-              <div fxFlex.gt-lg="33" fxFlex.gt-md="50">
+              <div *ngFor="let card of cards" fxFlex.gt-lg="33" fxFlex.gt-md="50">
                 <app-admin-card [card]="card"></app-admin-card>
               </div>
             </div>

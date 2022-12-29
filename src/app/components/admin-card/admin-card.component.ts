@@ -1,7 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CardModel } from 'src/app/model/card.model';
-import { BoloesFormComponent } from 'src/app/view/admin/boloes-form/boloes-form.component';
+import { BoloesService } from 'src/app/service/boloes/boloes.service';
+import { ToastService } from 'src/app/service/toast/toast.service';
+import { BoloesFormComponent } from 'src/app/view/admin/boloes/boloes-form/boloes-form.component';
+import { ConfirmDeletionComponent } from '../shared/confirm-deletion/confirm-deletion.component';
 
 @Component({
   selector: 'app-admin-card',
@@ -12,16 +15,45 @@ export class AdminCardComponent implements OnInit {
 
   @Input() card = new CardModel();
 
-  constructor(private dialog: MatDialog) { }
+  constructor(
+    private dialog: MatDialog,
+    private _boloes: BoloesService,
+    private toast: ToastService
+  ) { }
 
   ngOnInit(): void {
   }
 
   public editCard(){
-    this.dialog.open(BoloesFormComponent,{
-      data: this.card.id,
-      width: '700px',
-      height: '700px'
+    const dialogRef = this.dialog.open(BoloesFormComponent,{
+      data: this.card,
+      width: '400px',
+      height: '800px'
+    });
+
+    dialogRef.afterClosed().subscribe(data=>{
+      console.log(data);
+      
+      if(data && data.id>=0){
+        this._boloes.editBolao(data).subscribe(data=>{
+          this.toast.success("Bolão editado com sucesso!");
+        },()=>{
+          this.toast.error("Não foi possível editar o bolão, contate administrador.")
+        })
+      }
+    })
+  }
+  public deleteCard(){
+    const dialogRef = this.dialog.open(ConfirmDeletionComponent,{
+      data: {name: this.card.type, delete: false},
+      width: '350px'
+    })
+    dialogRef.afterClosed().subscribe(data=>{
+      if(data.delete){
+        this._boloes.deleteBolao(this.card.id).subscribe(data=>{
+          this.toast.success(`${this.card.type} deletado(a) com sucesso!`);
+        })
+      }
     })
   }
 }
