@@ -3,11 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-solicitacoes',
-  templateUrl: './solicitacoes.component.html',
-  styleUrls: ['./solicitacoes.component.scss']
+  selector: 'app-solicitacoes-list',
+  templateUrl: './solicitacoes-list.component.html',
+  styleUrls: ['./solicitacoes-list.component.scss']
 })
-export class SolicitacoesComponent implements OnInit{
+export class SolicitacoesListComponent implements OnInit{
   icons = {plus: faPlus};
   private ELEMENT_DATA = [
     {solicitacao: 1, concluida: false, date: new Date().toLocaleDateString('pt-Br'), name: 'João', whatsapp: '859999999'},

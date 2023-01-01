@@ -23,12 +23,9 @@ export class FormSendMessageComponent implements OnInit {
   }
 
   submit(){
-    console.log(this.contatoForm);
-
     if(this.contatoForm.valid){
     // this.toastr.success('Formulário enviado!');
     this.toastr.error('Desculpe pelo transtorno. Sua dúvida não foi registrada, por favor entre em contato pelo número: (85) 3274.7360');
-    console.log(this.contatoForm.value);
     }else{
       this.toastr.error('Por favor, verifique se seu e-mail está escrito corretamente ou se tem algum campo vazio.');
     }

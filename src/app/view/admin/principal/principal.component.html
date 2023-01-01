@@ -10,7 +10,7 @@
       <button mat-raised-button class="button" id="solicitacoes" [routerLinkActive]="['activeButton']" [routerLink]="['solicitacoes']">Solicitações</button>
       <button mat-raised-button class="button" id="boloes" [routerLinkActive]="['activeButton']" [routerLink]="['boloes']">Bolões</button>
       <button mat-raised-button class="button" id="usuarios" [routerLinkActive]="['activeButton']" [routerLink]="['usuarios']">Usuários</button>
-      <button mat-raised-button [matMenuTriggerFor]="userMenu" color="accent"><mat-icon style="width: 18px; height: 18px; font-size: 18px;">person</mat-icon>{{ usuarioAtual() }}</button>
+      <button mat-raised-button [matMenuTriggerFor]="userMenu" color="accent"><mat-icon style="width: 18px; height: 18px; font-size: 18px; margin-right: 5px;">person</mat-icon>{{ usuarioAtual() }}</button>
     </div>
     <div class="hidden max-[600px]:block">
       <button mat-icon-button [matMenuTriggerFor]="beforeMenu"><mat-icon>menu</mat-icon></button>

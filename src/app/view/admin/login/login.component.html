@@ -4,8 +4,8 @@
       <form class="form-content" [formGroup]="loginFormGroup" (ngSubmit)="submit()">
           <p>
               <mat-form-field appearance="outline">
-                  <mat-label>Username</mat-label>
-                  <input type="text" matInput placeholder="Username" formControlName="username" #username>
+                  <mat-label>E-mail</mat-label>
+                  <input type="text" matInput placeholder="E-mail" formControlName="email" #email>
               </mat-form-field>
           </p>
 
@@ -21,7 +21,7 @@
           </p>
 
           <div class="button">
-              <mat-checkbox mat-raised-button [(ngModel)]="checked" color="accent" style="color: rgb(36, 36, 36);" type="submit">Lembrar senha</mat-checkbox>
+              <mat-checkbox mat-raised-button (change)="check()" [checked]="checked" color="accent" style="color: rgb(36, 36, 36);" type="submit">Lembrar senha</mat-checkbox>
               <button mat-raised-button color="accent" type="submit">Login</button>
           </div>
       </form>

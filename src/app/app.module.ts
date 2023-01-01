@@ -26,7 +26,8 @@ import { FormSendMessageComponent } from './components/form-send-message/form-se
 import { ResultsComponent } from './view/client/results/results.component';
 import { FloatButtonComponent } from './view/client/components/float-button/float-button.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { SolicitacoesComponent } from './view/admin/solicitacoes/solicitacoes.component';
+import { SolicitacoesListComponent } from './view/admin/solicitacoes/solicitacoes-list/solicitacoes-list.component';
+import { SolicitacoesFormComponent } from './view/admin/solicitacoes/solicitacoes-form/solicitacoes-form.component';
 import { UsuariosComponent } from './view/admin/users/usuarios/usuarios.component';
 import { BoloesListComponent } from './view/admin/boloes/boloes-list/boloes-list.component';
 import { UsuariosFormComponent } from './view/admin/users/usuarios-form/usuarios-form.component';
@@ -58,7 +59,8 @@ registerLocaleData(ptBr);
     ResultsComponent,
     FormSendMessageComponent,
     FloatButtonComponent,
-    SolicitacoesComponent,
+    SolicitacoesListComponent,
+    SolicitacoesFormComponent,
     UsuariosComponent,
     BoloesListComponent,
     UsuariosFormComponent,
@@ -66,7 +68,7 @@ registerLocaleData(ptBr);
     TableComponent,
     UserTableComponent,
     AdminCardComponent,
-    ConfirmDeletionComponent
+    ConfirmDeletionComponent,
   ],
   imports: [
     BrowserModule,

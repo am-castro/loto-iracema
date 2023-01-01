@@ -46,10 +46,12 @@
             <mat-form-field fxFlex="100" appearance="standard">
                 <mat-label>Valor da Cota</mat-label>
                 <input matInput type="string" placeholder="15,56" formControlName="vlCota">
+                <span matPrefix>R$&nbsp;</span>
             </mat-form-field>
             <mat-form-field fxFlex="100" appearance="standard">
                 <mat-label>Valor do Prêmio</mat-label>
                 <input matInput type="string" placeholder="450.000.000,00" formControlName="vlPremio">
+                <span matPrefix>R$&nbsp;</span>
             </mat-form-field>
             <button mat-raised-button fxFlex="100" color="accent" (click)="saveBolao()">Salvar</button>
           </form>

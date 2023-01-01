@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { CardModel } from 'src/app/model/card.model';
 import { environment } from 'src/environments/environment';
 
-const API = environment.api_url;
+const API = `${environment.api_url}/${environment.boloes}`;
 @Injectable({
   providedIn: 'root'
 })
@@ -14,19 +14,18 @@ export class BoloesService {
 
   // getBoloes(): Observable<any> {
   getBoloes(): Observable<Array<CardModel>> {
-    return this._http.get<Array<CardModel>>(`${API}/boloes`);
+    return this._http.get<Array<CardModel>>(`${API}`);
   }
 
   newBolao(bolao: CardModel): Observable<any> {
-    return this._http.post(`${API}/boloes`, bolao);
+    return this._http.post(`${API}`, bolao);
   }
 
   editBolao(bolao: CardModel): Observable<any> {
-    console.log(bolao);
-    return this._http.put(`${API}/boloes/${bolao.id}`, bolao);
+    return this._http.put(`${API}/${bolao.id}`, bolao);
   }
 
   deleteBolao(bolaoId: number): Observable<any> {
-    return this._http.delete(`${API}/boloes/${bolaoId}`);
+    return this._http.delete(`${API}/${bolaoId}`);
   }
 }

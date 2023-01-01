@@ -32,8 +32,6 @@ export class AdminCardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(data=>{
-      console.log(data);
-      
       if(data && data.id>=0){
         this._boloes.editBolao(data).subscribe(data=>{
           this.toast.success("Bolão editado com sucesso!");

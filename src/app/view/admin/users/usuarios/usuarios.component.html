@@ -1,7 +1,7 @@
 <div class="admin-p-5 bg-white">
   <mat-card class="mat-elevation-z8">
     <mat-card-header>
-      <mat-card-title>Listagem de usuários</mat-card-title>
+      <mat-card-title>Listagem de usuários administrativos</mat-card-title>
       <mat-card-subtitle>Usuários que tem acesso ao painel administrativo</mat-card-subtitle>
       <span fxFlex></span>
       <div>
@@ -11,10 +11,10 @@
     <mat-card-content>
       <mat-tab-group color="accent">
         <mat-tab label="Usuários ativos">
-          <app-user-table [dataSource]="ativos" *ngIf="ativos.length; else noData"></app-user-table>
+          <app-user-table [dataSource]="ativos" (changeData)="change($event)" *ngIf="ativos.length; else noData"></app-user-table>
         </mat-tab>
         <mat-tab label="Usuários bloqueados">
-          <app-user-table [dataSource]="bloqueados" *ngIf="bloqueados.length; else noData"></app-user-table>
+          <app-user-table [dataSource]="bloqueados" (changeData)="change($event)" *ngIf="bloqueados.length; else noData"></app-user-table>
         </mat-tab>
       </mat-tab-group>
     </mat-card-content>

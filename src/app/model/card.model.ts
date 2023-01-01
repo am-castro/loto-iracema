@@ -10,6 +10,7 @@ export class CardModel{
   vlCota: string;
   vlPremio: string;
   dtPremio: Date;
+  userId: number;
 
   constructor(obj?: CardModel){
     this.id = obj && obj.id ? obj.id : 0;
@@ -22,6 +23,7 @@ export class CardModel{
     this.vlCota = obj && obj.vlCota ? obj.vlCota : '';
     this.vlPremio = obj && obj.vlPremio ? obj.vlPremio : '';
     this.dtPremio = obj && obj.dtPremio ? obj.dtPremio : new Date();
+    this.userId = obj && obj.userId ? obj.userId : 0;
   }
 }
 

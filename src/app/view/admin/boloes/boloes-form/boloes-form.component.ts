@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 import { ToastService } from 'src/app/service/toast/toast.service';
+import { LoggedUserService } from 'src/app/service/user/logged-user.service';
 
 
 @Component({
@@ -38,18 +39,20 @@ export class BoloesFormComponent implements OnInit {
 
   public newBolao = new FormGroup({
     id: new FormControl(this.data ? this.data.id : null),
-    type: new FormControl(this.data ? this.data.type : '', Validators.required),
-    qntGames: new FormControl(this.data ? this.data.qntGames : null, Validators.required),
-    qntDezenas: new FormControl(this.data ? this.data.qntDezenas : null, Validators.required),
-    concurso: new FormControl(this.data ? this.data.concurso : null, Validators.required),
-    qntCota: new FormControl(this.data ? this.data.qntCota : null, Validators.required),
-    qntTotalCota: new FormControl(this.data ? this.data.qntTotalCota : null, Validators.required),
-    vlCota: new FormControl(this.data ? this.data.vlCota : null, Validators.required),
-    vlPremio: new FormControl(this.data ? this.data.vlPremio : null, Validators.required),
-    dtPremio: new FormControl(this.data ? this.data.dtPremio : null, Validators.required)
+    type: new FormControl(this.data && this.data.type ? this.data.type : '', Validators.required),
+    qntGames: new FormControl(this.data && this.data.qntGames ? this.data.qntGames : null, Validators.required),
+    qntDezenas: new FormControl(this.data && this.data.qntDezenas ? this.data.qntDezenas : null, Validators.required),
+    concurso: new FormControl(this.data && this.data.concurso ? this.data.concurso : null, Validators.required),
+    qntCota: new FormControl(this.data && this.data.qntCota ? this.data.qntCota : null, Validators.required),
+    qntTotalCota: new FormControl(this.data && this.data.qntTotalCota ? this.data.qntTotalCota : null, Validators.required),
+    vlCota: new FormControl(this.data && this.data.vlCota ? this.data.vlCota : null, Validators.required),
+    vlPremio: new FormControl(this.data && this.data.vlPremio ? this.data.vlPremio : null, Validators.required),
+    dtPremio: new FormControl(this.data && this.data.dtPremio ? this.data.dtPremio : null, Validators.required),
+    userId: new FormControl(this.data && this.data.userId ? this.data.userId : this.user.getUserID())
   });
   constructor(
     private toast: ToastService,
+    private user: LoggedUserService,
     public dialogRef: MatDialogRef<BoloesFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
