@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SolicitacoesService } from 'src/app/service/solicitacoes/solicitacoes.service';
+import { ToastService } from 'src/app/service/toast/toast.service';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -7,13 +9,19 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class TableComponent implements OnInit {
   @Input() dataSource: any;
   @Output() changeData = new EventEmitter<any>();
-  displayedColumns: string[] = ['solicitacao', 'name', 'whatsapp', 'date', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'tel', 'createdAt', 'action'];
 
-  constructor() { }
+  constructor(
+    private _solicitacoes: SolicitacoesService,
+    private toast: ToastService
+  ) { }
   ngOnInit(){ }
 
   changeElement(item: any){
-    item.concluida = !item.concluida;
-    this.changeData.emit(item);
+    item.disabled = !item.disabled;
+    this._solicitacoes.editSolicitacoes(item).subscribe(data=>{
+      this.toast.success(`Solicitação ${item.disabled ? 'atendida': 'não atendida'}`);
+      this.changeData.emit(data);
+    })
   }
 }

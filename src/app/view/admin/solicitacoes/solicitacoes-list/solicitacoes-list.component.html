@@ -3,17 +3,19 @@
     <mat-card-header>
       <mat-card-title>Solicitações dos Clientes</mat-card-title>
       <mat-card-subtitle>Clientes com interesse em participar dos bolões.</mat-card-subtitle>
-      <span fxFlex></span>
+      <!-- <span fxFlex></span>
       <div>
         <button mat-raised-button color="accent" (click)="novaSolicitacao()"><fa-icon [icon]="icons.plus"></fa-icon> NOVO</button>
-      </div>
+      </div> -->
     </mat-card-header>
     <mat-card-content>
       <mat-tab-group color="accent">
-        <mat-tab label="Solicitações em aberto" fxFlex="100">
-          <app-table [dataSource]="naoConcluidas()" (changeData)="changeData($event)" *ngIf="naoConcluidas().length; else noData" fxFlex="100"></app-table>
+        <mat-tab label="Solicitações em aberto">
+          <div fxFlex="100" fxLayout="row wrap">
+              <app-table [dataSource]="naoConcluidas()" (changeData)="changeData($event)" *ngIf="naoConcluidas().length; else noData" fxFlex="100"></app-table>
+          </div>
         </mat-tab>
-        <mat-tab label="Solicitações Concluídas" fxFlex="100">
+        <mat-tab label="Solicitações Concluídas">
           <app-table [dataSource]="concluidas()" (changeData)="changeData($event)" *ngIf="concluidas().length; else noData" fxFlex="100"></app-table>
         </mat-tab>
       </mat-tab-group>

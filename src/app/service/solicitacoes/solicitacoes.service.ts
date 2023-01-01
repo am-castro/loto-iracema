@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
-import { UserModel } from 'src/app/model/user.model';
+import { SolicitacaoModel } from 'src/app/model/solicitacao.model';
 import { environment } from 'src/environments/environment';
 
 const API = `${environment.api_url}/${environment.solicitacoes}`;
@@ -17,23 +17,19 @@ export class SolicitacoesService {
     private _http: HttpClient
   ) { }
 
-  getUsers(): Observable<Array<UserModel>> {
-    return this._http.get<Array<UserModel>>(`${API}`);
+  getSolicitacoes(): Observable<Array<SolicitacaoModel>> {
+    return this._http.get<Array<SolicitacaoModel>>(`${API}`);
   }
 
-  newUser(user: UserModel): Observable<UserModel> {
-    return this._http.post<UserModel>(`${API}`, user);
+  newSolicitacoes(solicitacao: SolicitacaoModel): Observable<SolicitacaoModel> {
+    return this._http.post<SolicitacaoModel>(`${API}`, solicitacao);
   }
 
-  editUser(user: UserModel): Observable<UserModel> {
-    return this._http.put<UserModel>(`${API}/${user.id}`, user);
+  editSolicitacoes(solicitacao: SolicitacaoModel): Observable<SolicitacaoModel> {
+    return this._http.put<SolicitacaoModel>(`${API}/${solicitacao.id}`, solicitacao);
   }
 
-  deleteUser(userId: number): Observable<any> {
-    return this._http.delete(`${API}/${userId}`);
-  }
-
-  login(email: string): Observable<Array<UserModel>>{
-    return this._http.get<Array<UserModel>>(`${API}?email=${email}`);
+  deleteSolicitacoes(solicitacaoId: number): Observable<any> {
+    return this._http.delete(`${API}/${solicitacaoId}`);
   }
 }
