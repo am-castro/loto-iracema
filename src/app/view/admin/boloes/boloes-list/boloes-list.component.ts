@@ -35,7 +35,8 @@ export class BoloesListComponent implements OnInit {
 
   public newBolao() {
     const dialogRef = this.dialog.open(BoloesFormComponent,{
-      width: '400px'
+      width: '400px',
+      height: '600px'
     })
     dialogRef.afterClosed().subscribe(data=>{
       if(data){

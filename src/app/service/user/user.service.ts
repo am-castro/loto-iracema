@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { UserModel } from 'src/app/model/user.model';
 import { environment } from 'src/environments/environment';
 
-const API = `${environment.api_url}/${environment.usuarios}`;
+const API = `${environment.api_url}${environment.login}`;
 @Injectable({
   providedIn: 'root'
 })
@@ -33,7 +33,7 @@ export class UserService {
     return this._http.delete(`${API}/${userId}`);
   }
 
-  login(email: string): Observable<Array<UserModel>>{
-    return this._http.get<Array<UserModel>>(`${API}?email=${email}`);
+  login(email: string, password: string): Observable<Array<UserModel>>{
+    return this._http.post<Array<UserModel>>(`${API}`, {email: email, password: password});
   }
 }

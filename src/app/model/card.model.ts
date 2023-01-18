@@ -11,6 +11,11 @@ export class CardModel{
   vlPremio: string;
   dtPremio: Date;
   userId: number;
+  base64img: string;
+  color: string;
+  createdAt: Date;
+  updatedAt: Date;
+  disabled: boolean;
 
   constructor(obj?: CardModel){
     this.id = obj && obj.id ? obj.id : 0;
@@ -24,6 +29,11 @@ export class CardModel{
     this.vlPremio = obj && obj.vlPremio ? obj.vlPremio : '';
     this.dtPremio = obj && obj.dtPremio ? obj.dtPremio : new Date();
     this.userId = obj && obj.userId ? obj.userId : 0;
+    this.base64img = obj && obj.base64img ? obj.base64img : '';
+    this.color = obj && obj.color ? obj.color : '';
+    this.createdAt = obj && obj.createdAt ? obj.createdAt : new Date(Date.now());
+    this.updatedAt = new Date(Date.now());
+    this.disabled = obj &&  obj.disabled ? obj.disabled : true;
   }
 }
 
