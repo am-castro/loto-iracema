@@ -19,7 +19,7 @@
     </div>
     <div fxFlex="auto" fxLayout="column" fxLayoutAlign="center center" class="font-black">
       <span>Concurso: {{ card.concurso }}</span>
-      <a href="https://wa.me/+558532747360?text=Olá, tudo bem com você? Gostaria de participar da cota do jogo com concurso de número {{card.concurso}}" target="_blank" *ngIf="!result"><button mat-raised-button [disabled]="card.qntCota==card.qntTotalCota" class="rounded-30 btn-{{getClass(card.type)}} sub z-20" [routerLink]="['resultados', card.id]">Participar</button></a>
+      <a href="https://wa.me/+558532747360?text=Olá, tudo bem com você? Gostaria de participar da cota do jogo com concurso de número {{card.concurso}}" target="_blank" *ngIf="!result"><button mat-raised-button [disabled]="card.qntCota==card.qntTotalCota" class="rounded-30 btn-{{getClass(card.type)}} sub z-20" (click)="onRedirect(card)">Participar</button></a>
       <a href="https://loterias.caixa.gov.br/Paginas/{{getUrl(card.type)}}" target="_blank" *ngIf="result"><button mat-raised-button class="rounded-30 btn-{{getClass(card.type)}} sub z-20">Ver resultados</button></a>
     </div>
   </div>

@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { ToastService } from '../../../service/toast/toast.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
@@ -13,23 +13,25 @@ export class LoginComponent implements OnInit {
 
   public checked: boolean;
   public error: string = '';
-  public loginFormGroup = this.formBuilder.group({
-    email: '',
-    password: ''
-  });
+  public loginFormGroup: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private toastr: ToastService,
     private _user: UserService
-  ) { }
+  ) {
+    this.loginFormGroup = this.formBuilder.group({
+      email: new FormGroup('', Validators.required),
+      password: new FormGroup('', Validators.required)
+    });
+  }
 
   ngOnInit(): void {
     this.isLogged();
   }
 
   public submit(){
-    this._user.login(this.loginFormGroup.value.email, this.loginFormGroup.value.password).subscribe(data=>{
+    this._user.login(this.loginFormGroup.value['email'], this.loginFormGroup.value['password']).subscribe(data=>{
       console.log(data);
 
       // if(data[0] && data[0].email){

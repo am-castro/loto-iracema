@@ -13,20 +13,22 @@ import { UserService } from 'src/app/service/user/user.service';
 export class UsuariosFormComponent implements OnInit {
 
   public hide = true;
-  public newUser = new FormGroup({
-    id: new FormControl(this.data ? this.data.id : null),
-    name: new FormControl(this.data ? this.data.name : '', Validators.required),
-    email: new FormControl(this.data ? this.data.email : '', [Validators.email, Validators.required]),
-    password: new FormControl(this.data ? this.data.password : '', Validators.required),
-    createdAt: new FormControl(this.data ? this.data.createdAt : new Date(Date.now())),
-    disabled: new FormControl(this.data ? this.data.disabled : false)
-  });
+  public newUser: FormGroup;
   constructor(
     private toast: ToastService,
     private _user: UserService,
     public dialogRef: MatDialogRef<UsuariosFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: UserModel
-  ) { }
+  ) {
+    this.newUser = new FormGroup({
+      id: new FormControl(this.data ? this.data.id : null),
+      name: new FormControl(this.data ? this.data.name : '', Validators.required),
+      email: new FormControl(this.data ? this.data.email : '', [Validators.email, Validators.required]),
+      password: new FormControl(this.data ? this.data.password : '', Validators.required),
+      createdAt: new FormControl(this.data ? this.data.createdAt : new Date(Date.now())),
+      disabled: new FormControl(this.data ? this.data.disabled : false)
+    });
+  }
 
   ngOnInit(): void {
   }

@@ -21,8 +21,7 @@
           </p>
 
           <div class="button">
-              <mat-checkbox mat-raised-button (change)="check()" [checked]="checked" color="accent" style="color: rgb(36, 36, 36);" type="submit">Lembrar senha</mat-checkbox>
-              <button mat-raised-button color="accent" type="submit">Login</button>
+              <button mat-raised-button color="accent" [disabled]="loginFormGroup.invalid" type="submit">Login</button>
           </div>
       </form>
   </div>

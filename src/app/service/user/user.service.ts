@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { UserModel } from 'src/app/model/user.model';
 import { environment } from 'src/environments/environment';
+import { ContentTypeService } from '../content-type/content-type.service';
 
 const API = `${environment.api_url}${environment.login}`;
 @Injectable({
@@ -14,6 +15,7 @@ export class UserService {
 
   constructor(
     private route: Router,
+    private _contentType: ContentTypeService,
     private _http: HttpClient
   ) { }
 
@@ -33,7 +35,8 @@ export class UserService {
     return this._http.delete(`${API}/${userId}`);
   }
 
-  login(email: string, password: string): Observable<Array<UserModel>>{
-    return this._http.post<Array<UserModel>>(`${API}`, {email: email, password: password});
+  login(email: any, password: any): Observable<object>{
+    const login = {email: email, password: password};
+    return this._http.post<object>(`${API}`, login, this._contentType.fullJson());
   }
 }

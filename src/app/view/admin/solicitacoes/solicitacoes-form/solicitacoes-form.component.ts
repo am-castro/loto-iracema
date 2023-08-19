@@ -36,25 +36,27 @@ export class SolicitacoesFormComponent implements OnInit {
   // ];
   filteredOptions: Observable<string[]>;
 
-  public newBolao = new FormGroup({
-    id: new FormControl(this.data ? this.data.id : null),
-    type: new FormControl(this.data && this.data.type ? this.data.type : '', Validators.required),
-    qntGames: new FormControl(this.data && this.data.qntGames ? this.data.qntGames : null, Validators.required),
-    qntDezenas: new FormControl(this.data && this.data.qntDezenas ? this.data.qntDezenas : null, Validators.required),
-    concurso: new FormControl(this.data && this.data.concurso ? this.data.concurso : null, Validators.required),
-    qntCota: new FormControl(this.data && this.data.qntCota ? this.data.qntCota : null, Validators.required),
-    qntTotalCota: new FormControl(this.data && this.data.qntTotalCota ? this.data.qntTotalCota : null, Validators.required),
-    vlCota: new FormControl(this.data && this.data.vlCota ? this.data.vlCota : null, Validators.required),
-    vlPremio: new FormControl(this.data && this.data.vlPremio ? this.data.vlPremio : null, Validators.required),
-    dtPremio: new FormControl(this.data && this.data.dtPremio ? this.data.dtPremio : null, Validators.required),
-    userId: new FormControl(this.data && this.data.userId ? this.data.userId : this.user.getUserID())
-  });
+  public newBolao: FormGroup;
   constructor(
     private toast: ToastService,
     private user: LoggedUserService,
     public dialogRef: MatDialogRef<SolicitacoesFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) { }
+  ) {
+    this.newBolao = new FormGroup({
+      id: new FormControl(this.data ? this.data.id : null),
+      type: new FormControl(this.data && this.data.type ? this.data.type : '', Validators.required),
+      qntGames: new FormControl(this.data && this.data.qntGames ? this.data.qntGames : null, Validators.required),
+      qntDezenas: new FormControl(this.data && this.data.qntDezenas ? this.data.qntDezenas : null, Validators.required),
+      concurso: new FormControl(this.data && this.data.concurso ? this.data.concurso : null, Validators.required),
+      qntCota: new FormControl(this.data && this.data.qntCota ? this.data.qntCota : null, Validators.required),
+      qntTotalCota: new FormControl(this.data && this.data.qntTotalCota ? this.data.qntTotalCota : null, Validators.required),
+      vlCota: new FormControl(this.data && this.data.vlCota ? this.data.vlCota : null, Validators.required),
+      vlPremio: new FormControl(this.data && this.data.vlPremio ? this.data.vlPremio : null, Validators.required),
+      dtPremio: new FormControl(this.data && this.data.dtPremio ? this.data.dtPremio : null, Validators.required),
+      userId: new FormControl(this.data && this.data.userId ? this.data.userId : this.user.getUserID())
+    });
+  }
 
   ngOnInit() {
     this.filteredOptions = this.newBolao.valueChanges.pipe(

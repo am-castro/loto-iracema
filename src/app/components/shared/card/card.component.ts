@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
 import { CardModel, enumCardName } from 'src/app/model/card.model';
@@ -13,7 +14,9 @@ export class CardsComponent {
   @Input() result: boolean = false;
   @Input() card: CardModel;
   public icons = {calendar: faCalendarCheck, clock: faClock, award: faClock};
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   getClass(cssClass: string){
     if(cssClass == enumCardName.MEGA_SENA || cssClass == enumCardName.MEGA_DA_VIRADA){
@@ -68,5 +71,9 @@ export class CardsComponent {
     }else{
       return 'Mais-Milionaria.aspx';
     }
+  }
+
+  public onRedirect(card: CardModel) {
+    this.router.navigate(['resultados', card.id]);
   }
 }

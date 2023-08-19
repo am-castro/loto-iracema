@@ -3,9 +3,15 @@
     <button class="rounded-full btn-boloes text-white pt-2 pb-2 pl-8 pr-8 text-xl">Bolões</button>
   </div>
 
-    <div class="mt-10 md:ml-36 md:mr-36" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <div class="mt-10 md:ml-36 md:mr-36" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between center" *ngIf="cards.length>0; else noCard">
       <div *ngFor="let card of cards" fxFlex.gt-sm="100" fxFlex.gt-md="49" fxFlex.gt-lg="49" class="mt-2 mb-2">
         <app-card [card]="card"></app-card>
       </div>
     </div>
 </div>
+
+<ng-template #noCard>
+  <div class="mt-10 p-10 w-full">
+    <h1 class="text-3xl text-center">Nenhum bolão ativo por aqui no momento, por favor, entre em contato!</h1>
+  </div>
+</ng-template>

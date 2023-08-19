@@ -39,41 +39,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfirmDeletionComponent } from './components/shared/confirm-deletion/confirm-deletion.component';
 
 import ptBr from '@angular/common/locales/pt';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { GeneralModule } from './components/general.module';
 registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalComponent,
     LoginComponent,
     HomeComponent,
-    CarouselComponent,
     BoloesComponent,
-    CardsComponent,
-    SpinnerComponent,
-    FooterComponent,
     ToolbarComponent,
     AboutComponent,
     ContactComponent,
     ResultComponent,
     ResultsComponent,
-    FormSendMessageComponent,
     FloatButtonComponent,
-    SolicitacoesListComponent,
-    SolicitacoesFormComponent,
-    UsuariosComponent,
-    BoloesListComponent,
-    UsuariosFormComponent,
-    BoloesFormComponent,
-    TableComponent,
-    UserTableComponent,
-    AdminCardComponent,
-    ConfirmDeletionComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
@@ -84,9 +69,13 @@ registerLocaleData(ptBr);
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     MaterialModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    GeneralModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'} },
+    { provide: LOCALE_ID, useValue: 'pt' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

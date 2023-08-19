@@ -31,33 +31,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: PrincipalComponent,
-    children: [
-      {
-        path: '',
-        redirectTo: '/admin/solicitacoes',
-        pathMatch: 'full'
-      },
-      {
-        path: 'solicitacoes',
-        component: SolicitacoesListComponent
-      },
-      {
-        path: 'boloes',
-        component: BoloesListComponent
-      },
-      {
-        path: 'boloes/edit/:id',
-        component: BoloesFormComponent
-      },
-      {
-        path: 'usuarios',
-        component: UsuariosComponent
-      },
-      {
-        path: 'usuarios/edit/:id',
-        component: UsuariosFormComponent
-      }
-    ]
+    loadChildren: () => import('./view/admin/admin.module').then(m => m.AdminModule)
   },
   {
     path: '**',
