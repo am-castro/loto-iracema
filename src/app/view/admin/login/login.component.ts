@@ -1,8 +1,9 @@
 import { Router } from '@angular/router';
-import { ToastService } from '../../../service/toast/toast.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from 'src/app/service/user/user.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastService } from 'src/app/shared/service/toast/toast.service';
+import { UserService } from 'src/app/shared/service/user/user.service';
+import { LoggedUserService } from 'src/app/shared/service/user/logged-user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,86 +15,46 @@ export class LoginComponent implements OnInit {
   public checked: boolean;
   public error: string = '';
   public loginFormGroup: FormGroup;
+
+  public isShowPassword = false;
+  public loading = false;
+
+  public username = '';
+  public password = '';
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private toastr: ToastService,
+    private userService: LoggedUserService,
     private _user: UserService
-  ) {
-    this.loginFormGroup = this.formBuilder.group({
-      email: new FormGroup('', Validators.required),
-      password: new FormGroup('', Validators.required)
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
     this.isLogged();
   }
 
   public submit(){
-    this._user.login(this.loginFormGroup.value['email'], this.loginFormGroup.value['password']).subscribe(data=>{
-      console.log(data);
-
-      // if(data[0] && data[0].email){
-      //   const user = data[0];
-      //   if(this.loginFormGroup.value.email==user.email && this.loginFormGroup.value.password==user.password){
-      //     const jsonPrepared = JSON.stringify(user);
-      //     if(this.checked){
-      //       window.localStorage.setItem('hh.session', jsonPrepared);
-      //     }else{
-      //       window.sessionStorage.setItem('hh.session', jsonPrepared);
-      //     }
-      //     this.error = '';
-      //     this.isLogged();
-      //   }else if(this.loginFormGroup.value.email==user.email && this.loginFormGroup.value.password!=user.password){
-      //     this.error = 'Senha incorreta!';
-      //     this.toastr.info('Senha incorreta!');
-      //   }
-      // }else{
-      //   this.error = 'E-mail incorreto!';
-      //   this.toastr.info('E-mail incorreto!');
-      // }
-    }),(error:any)=>{
-      console.log(error);
-
-        // this.toastr.error(error.error);
-    }
-    // if(!this.loginFormGroup.value.username || !this.loginFormGroup.value.password){
-    //   this.error = 'Preencha todos os campos';
-    //   this.toastr.info('Preencha todos os campos!');
-    // }else if(this.loginFormGroup.value.username !== 'admin' || this.loginFormGroup.value.password !== 'admin'){
-    //   this.error = 'Login ou senha incorreto!';
-    //   this.toastr.info('Login ou senha incorreto!');
-    // }else if(this.loginFormGroup.value.username === 'admin' && this.loginFormGroup.value.password === 'admin'){
-    //   const jsonPrepared = JSON.stringify(this.setUser());
-    //   if(this.checked){
-    //     window.localStorage.setItem('hh.session', jsonPrepared);
-    //   }else{
-    //     window.sessionStorage.setItem('hh.session', jsonPrepared);
-    //   }
-    //   this.error = '';
-    //   this.isLogged();
-    // }
+    this.loading = true;
+    this._user.login(this.username, this.password).subscribe({
+      next: data => {
+        this.loading = false;
+        this.userService.setSessionStorage(data.user);
+        this.userService.setToken(data.token);
+        this.toastr.success('Login efetuado com sucesso!', 'Sucesso!', 5000);
+        this.router.navigate(['admin','solicitacoes']);
+      },
+      error: error => {
+        this.loading = false;
+        this.toastr.info(error.error, 'Erro!', 5000);
+      },
+    });
   }
-
-  check(){
-    this.checked = !this.checked;
-  }
-  // public setUser(){
-  //   return {
-  //     "email": this.loginFormGroup.value.email,
-  //     "pass": this.loginFormGroup.value.password
-  //   }
-  // }
 
   private isLogged(){
     let msg: string;
     let logged;
-    if(this.checked){
-      logged = window.localStorage.getItem('hh.session');
-    }else{
-      logged = window.sessionStorage.getItem('hh.session');
-    }
+    logged = window.sessionStorage.getItem('hh.session');
     if(logged){
       const authUser = JSON.parse(logged);
       msg = `Bem vindo ${authUser.name}!`;

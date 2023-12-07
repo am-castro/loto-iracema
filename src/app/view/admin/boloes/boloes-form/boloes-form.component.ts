@@ -3,8 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
-import { ToastService } from 'src/app/service/toast/toast.service';
-import { LoggedUserService } from 'src/app/service/user/logged-user.service';
+import { ToastService } from 'src/app/shared/service/toast/toast.service';
+import { LoggedUserService } from 'src/app/shared/service/user/logged-user.service';
 
 
 @Component({

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { SolicitacaoModel } from 'src/app/model/solicitacao.model';
-import { SolicitacoesService } from 'src/app/service/solicitacoes/solicitacoes.service';
-import { ToastService } from 'src/app/service/toast/toast.service';
+import { SolicitacaoModel } from 'src/app/shared/model/solicitacao.model';
+import { SolicitacoesService } from 'src/app/shared/service/solicitacoes/solicitacoes.service';
+import { ToastService } from 'src/app/shared/service/toast/toast.service';
 
 @Component({
   selector: 'app-solicitacoes-list',

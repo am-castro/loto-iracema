@@ -1,9 +1,9 @@
 import { Component, Inject, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { UserModel } from 'src/app/model/user.model';
-import { ToastService } from 'src/app/service/toast/toast.service';
-import { UserService } from 'src/app/service/user/user.service';
+import { UserModel } from 'src/app/shared/model/user.model';
+import { ToastService } from 'src/app/shared/service/toast/toast.service';
+import { UserService } from 'src/app/shared/service/user/user.service';
 
 @Component({
   selector: 'app-usuarios-form',

@@ -4,11 +4,7 @@ import { PrincipalComponent } from './view/admin/principal/principal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ResultComponent } from './view/client/result/result.component';
-import { UsuariosFormComponent } from './view/admin/users/usuarios-form/usuarios-form.component';
-import { UsuariosComponent } from './view/admin/users/usuarios/usuarios.component';
-import { BoloesFormComponent } from './view/admin/boloes/boloes-form/boloes-form.component';
-import { BoloesListComponent } from './view/admin/boloes/boloes-list/boloes-list.component';
-import { SolicitacoesListComponent } from './view/admin/solicitacoes/solicitacoes-list/solicitacoes-list.component';
+// import { ResultResolver } from './view/client/shared/providers/resolvers/result.resolver';
 
 const routes: Routes = [
   {
@@ -22,7 +18,10 @@ const routes: Routes = [
   },
   {
     path: 'resultados',
-    component: ResultComponent
+    component: ResultComponent,
+    resolve: {
+      // loterias: ResultResolver
+    }
   },
   {
     path: 'login',

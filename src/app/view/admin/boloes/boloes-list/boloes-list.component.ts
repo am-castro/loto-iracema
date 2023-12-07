@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { CardModel, enumCardName } from 'src/app/model/card.model';
-import { BoloesService } from 'src/app/service/boloes/boloes.service';
-import { ToastService } from 'src/app/service/toast/toast.service';
 import { BoloesFormComponent } from '../boloes-form/boloes-form.component';
+import { CardModel } from 'src/app/shared/model/card.model';
+import { ToastService } from 'src/app/shared/service/toast/toast.service';
+import { BoloesService } from 'src/app/shared/service/boloes/boloes.service';
 
 @Component({
   selector: 'app-boloes-list',

@@ -58,3 +58,16 @@ mat-toolbar{
   --mat-expansion-header-collapsed-state-height: 48px;
   --mat-expansion-header-expanded-state-height: 48px;
 }
+.mdc-notched-outline__notch { border-right: none; }
+/* .mat-mdc-text-field-wrapper { height: 56px !important; } */
+.link{
+  color: #296aa3 !important;
+}
+.admin-p-5{
+  padding-top: 5rem;
+}
+@media screen and (min-width: 600px) {
+  .admin-p-5{
+    padding: 3rem;
+  }
+}

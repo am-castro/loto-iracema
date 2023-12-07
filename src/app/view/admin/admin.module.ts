@@ -10,12 +10,10 @@ import { SolicitacoesListComponent } from './solicitacoes/solicitacoes-list/soli
 import { SolicitacoesFormComponent } from './solicitacoes/solicitacoes-form/solicitacoes-form.component';
 import { UsuariosFormComponent } from './users/usuarios-form/usuarios-form.component';
 import { UsuariosComponent } from './users/usuarios/usuarios.component';
-import { UserTableComponent } from 'src/app/components/user-table/user-table.component';
-import { AdminCardComponent } from 'src/app/components/admin-card/admin-card.component';
+import { UserTableComponent } from 'src/app/shared/components/user-table/user-table.component';
+import { AdminCardComponent } from 'src/app/shared/components/admin-card/admin-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TableComponent } from 'src/app/components/table/table.component';
-import { ConfirmDeletionComponent } from 'src/app/components/shared/confirm-deletion/confirm-deletion.component';
-import { GeneralModule } from 'src/app/components/general.module';
+import { GeneralModule } from 'src/app/shared/components/general.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({

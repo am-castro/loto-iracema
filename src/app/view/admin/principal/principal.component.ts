@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoggedUserService } from 'src/app/service/user/logged-user.service';
-import { UserService } from 'src/app/service/user/user.service';
+import { LoggedUserService } from 'src/app/shared/service/user/logged-user.service';
 
 @Component({
   selector: 'app-principal',

@@ -6,18 +6,18 @@
 <mat-toolbar>
   <div class="toolbar row-auto flex text-center">
     <img src="./assets/img/logo-iracema.png">
-    <div class="menu max-[600px]:hidden block" fxLayoutGap="20px">
+    <div class="menu max-[768px]:hidden block" fxLayoutGap="20px">
       <button mat-raised-button class="button" id="solicitacoes" [routerLinkActive]="['activeButton']" [routerLink]="['solicitacoes']">Solicitações</button>
       <button mat-raised-button class="button" id="boloes" [routerLinkActive]="['activeButton']" [routerLink]="['boloes']">Bolões</button>
-      <button mat-raised-button class="button" id="usuarios" [routerLinkActive]="['activeButton']" [routerLink]="['usuarios']">Usuários</button>
-      <button mat-raised-button [matMenuTriggerFor]="userMenu" color="accent"><mat-icon style="width: 18px; height: 18px; font-size: 18px; margin-right: 5px;">person</mat-icon>{{ usuarioAtual() }}</button>
+      <button mat-raised-button class="button" id="usuarios" [routerLinkActive]="['activeButton']" [routerLink]="['usuarios']">Funcionários</button>
+      <button mat-stroked-button [matMenuTriggerFor]="userMenu" color="primary"><mat-icon style="width: 18px; height: 18px; font-size: 18px; margin-right: 5px;">person</mat-icon>{{ usuarioAtual() }}</button>
     </div>
-    <div class="hidden max-[600px]:block">
+    <div class="hidden max-[768px]:block">
       <button mat-icon-button [matMenuTriggerFor]="beforeMenu"><mat-icon>menu</mat-icon></button>
       <mat-menu #beforeMenu="matMenu" xPosition="before">
         <button mat-menu-item [routerLink]="['solicitacoes']">Solicitações</button>
         <button mat-menu-item [routerLink]="['boloes']">Bolões</button>
-        <button mat-menu-item [routerLink]="['usuarios']">Usuários</button>
+        <button mat-menu-item [routerLink]="['usuarios']">Funcionários</button>
         <button mat-menu-item (click)="logoff()">Sair do sistema</button>
       </mat-menu>
     </div>

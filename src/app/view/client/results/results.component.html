@@ -1,11 +1,17 @@
-<div class="w-10 mt-10" fxFlex="100" fxLayout="row wrap">
+<div class="w-10 mt-10 mb-40" fxFlex="100" fxLayout="row wrap">
   <div fxFlex="100" fxLayoutAlign="center center">
     <button class="rounded-full btn-boloes text-white pt-2 pb-2 pl-8 pr-8 text-xl">Resultados dos jogos</button>
   </div>
 
     <div class="mt-10 md:ml-36 md:mr-36" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between center">
-      <div *ngFor="let card of cards" fxFlex.gt-sm="100" fxFlex.gt-md="49" fxFlex.gt-lg="49" class="mt-2 mb-2">
-        <app-card [card]="card" [result]="true"></app-card>
-      </div>
+    <mat-form-field class="w-full">
+      <mat-label>Selecione a loteria</mat-label>
+      <mat-select (selectionChange)="getSelected($event)">
+        <mat-option [value]="option.id" *ngFor="let option of loterias">
+          {{option.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <card-result-lotery *ngIf="card" class="w-full" [card]="card" [type]="selectedLoteria"></card-result-lotery>
     </div>
 </div>

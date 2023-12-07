@@ -1,0 +1,39 @@
+<div class="w-full rounded-xl bg-[#00AA00] shadow-xl text-white">
+  <div class="bg-[#00AA00] pr-6 pl-6 pt-4 pb-4 rounded-xl w-full">
+    <div class="pb-3 w-full">
+      <span class="font-black text-xl2">{{type.name}}</span>
+    </div>
+    <div class="flex justify-between text-center">
+      <span class="font-bold">Concurso: {{card.contestNumber}}</span>
+      <span class="font-bold">{{card.drawDateTime | date: 'shortDate'}}</span>
+    </div>
+  </div>
+  <div class="bg-[#1b6b1b] pr-6 pl-6 pt-2 pb-2 text-base gap-1">
+    <fa-icon [icon]="icons.coin" class="mr-2"></fa-icon>
+    <span class="font-bold">{{contestPrize}}</span>
+  </div>
+  <div class="bg-[#FFFFFF] rounded-b-xl w-full flex justify-center flex-wrap">
+    <div class="w-full p-6 gap-4 flex justify-center">
+      <button mat-fab color="primary" *ngFor="let dozen of card['dozens']" class="font-black text-xl" style="background-color: #1b6b1b;">{{dozen}}</button>
+    </div>
+    <div class="w-full flex justify-center" *ngIf="type.type=='timemania'">
+      <fa-icon [icon]="icons.heart"></fa-icon> <span class="font-bold">Favoritar</span>
+    </div>
+    <div class="w-10/12 bg-[#1b6b1b] text-[#90ff8c] m-2 p-2 justify-center flex rounded-lg">
+      <span>Próximo sorteio: {{card.nextContestDate | date: 'shortDate'}}</span>
+    </div>
+    <hr>
+    <table class="text-[#464646] m-4 mt-1">
+      <tr>
+        <th class="w-[8rem] pr-2 pl-2 pt-2 pb-2">Faixa</th>
+        <th class="w-[8rem] pr-2 pl-2 pt-2 pb-2">Ganhadores</th>
+        <th class="w-[8rem] pr-2 pl-2 pt-2 pb-2">Prêmio</th>
+      </tr>
+      <tr *ngFor="let card of card.awardRanges">
+        <td class="pr-2 pl-2 pt-1 pb-1">{{card.range}}</td>
+        <td class="pr-2 pl-2 pt-1 pb-1">{{card.winners}}</td>
+        <td class="pr-2 pl-2 pt-1 pb-1">{{card.prize | currency:'R$'}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

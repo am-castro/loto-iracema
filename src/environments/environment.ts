@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   api_url: 'http://localhost:8080',
+  api_types: 'https://ms.sorteonline.com.br/results-connector/v1/api-results/legacy',
+  v1: 'v1',
   login: 'login',
   user: 'user',
   solicitacoes: 'solicitacoes',

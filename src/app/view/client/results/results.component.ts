@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CardModel, enumCardName } from 'src/app/model/card.model';
+import { ResultService } from '../shared/providers/services/result.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -8,20 +9,39 @@ import { CardModel, enumCardName } from 'src/app/model/card.model';
 })
 export class ResultsComponent implements OnInit {
 
-  cards = [
-    // new CardModel({id: 1, type: enumCardName.LOTO_FACIL, concurso: 1549, dtPremio: new Date(), qntCota: 15, qntTotalCota: 15, qntDezenas: 10, vlPremio: 'R$3.000.000,00', qntGames: 5, vlCota: '16,00', userId: 0}),
-    // new CardModel({id: 2, type: enumCardName.DUPLA_SENA, concurso: 1550, dtPremio: new Date(), qntCota: 15, qntTotalCota: 15, qntDezenas: 10, vlPremio: 'R$5.500.000,00', qntGames: 5, vlCota: '17,00', userId: 0}),
-    // new CardModel({id: 3, type: enumCardName.LOTECA, concurso: 1551, dtPremio: new Date(), qntCota: 15, qntTotalCota: 15, qntDezenas: 10, vlPremio: 'R$2.500.000,00', qntGames: 5, vlCota: '5,00', userId: 0}),
-    // new CardModel({id: 4, type: enumCardName.DUPLA_SENA, concurso: 1552, dtPremio: new Date(), qntCota: 15, qntTotalCota: 15, qntDezenas: 10, vlPremio: 'R$3.000.000,00', qntGames: 5, vlCota: '10,00', userId: 0}),
-    // new CardModel({id: 5, type: enumCardName.DIA_DE_SORTE, concurso: 1553, dtPremio: new Date(), qntCota: 15, qntTotalCota: 15, qntDezenas: 10, vlPremio: 'R$1.500.000,00', qntGames: 5, vlCota: '13,00', userId: 0}),
-    // new CardModel({id: 6, type: enumCardName.DIA_DE_SORTE, concurso: 1554, dtPremio: new Date(), qntCota: 15, qntTotalCota: 15, qntDezenas: 10, vlPremio: 'R$500.000,00', qntGames: 5, vlCota: '12,00', userId: 0}),
-    // new CardModel({id: 7, type: enumCardName.DIA_DE_SORTE, concurso: 1555, dtPremio: new Date(), qntCota: 15, qntTotalCota: 15, qntDezenas: 10, vlPremio: 'R$350.000,00', qntGames: 5, vlCota: '10,00', userId: 0}),
-  ];
+  card: any;
+  loterias = [
+    { type: 'mega-sena', name: 'Mega Sena', id: 1 },
+    { type: 'dupla-sena', name: 'Dupla Sena', id: 2 },
+    { type: 'lotomania', name: 'Lotomani', id: 3 },
+    { type: 'quina', name: 'Quina', id: 4 },
+    { type: 'loteria-federal', name: 'Federal', id: 5 },
+    { type: 'loteca', name: 'Loteca', id: 6 },
+    { type: 'lotofacil', name: 'Lotofacil', id: 8 },
+    { type: 'timemania', name: 'Timemania', id: 9 },
+    { type: 'dia-de-sorte', name: 'Dia de Sorte', id: 10 },
+    { type: 'super-sete', name: 'Super Sete', id: 11 },
+    { type: 'mais-milionaria', name: '+ Milionária', id: 12 },
+  ]
 
-  constructor() { }
+  selectedLoteria: any;
 
-  ngOnInit(): void {
+  constructor(
+    private _result: ResultService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    // this.transformToOptions(this.activatedRoute.snapshot.data['loterias']);
+  }
+  ngOnInit() {
   }
 
+  getSelected(a: any) {
+    this.selectedLoteria = this.loterias.filter(loteria => loteria.id == a.value)[0];
+    this._result.getResults(a.value).subscribe({
+      next: data => {
+        this.card = data;
+      },
+      error: error => {}
+    });
+  }
 }
-// new Date.toLocaleDateString('pt-Br')
